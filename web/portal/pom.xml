@@ -21,12 +21,12 @@
           <webResources>
             <resource>
               <directory>${exo.projects.directory.src}/portal/branches/2.0/web/portal/src/main/webapp</directory>
-              <!--excludes>
+              <excludes>
               	<exclude>index.jsp</exclude>
                 <exclude>WEB-INF/web.xml</exclude>
                 <exclude>WEB-INF/conf/</exclude>
 		        		<exclude>WEB-INF/classes/locale/navigation/</exclude>
-              </excludes-->
+              </excludes>
             </resource>
             <resource>
               <directory>${exo.projects.directory.src}/portal/branches/2.0/web/portal/target/exo.portal.web.portal-${org.exoplatform.portal.version}</directory>
