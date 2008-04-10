@@ -63,18 +63,8 @@
   </servlet>   
    
   <!-- ================================================================= -->     
-  
-  
-  <servlet-mapping>
-    <servlet-name>javascript</servlet-name>
     <url-pattern>/javascript/*</url-pattern>
   </servlet-mapping>  
-  
-  <servlet-mapping>
-    <servlet-name>css</servlet-name>
-    <url-pattern>/css/*</url-pattern>
-  </servlet-mapping>  
-  
   <servlet-mapping>
     <servlet-name>portal</servlet-name>
     <url-pattern>/private/*</url-pattern>
