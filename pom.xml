@@ -4,7 +4,7 @@
   <groupId>org.exoplatform.webos</groupId>
   <artifactId>config</artifactId>
   <name>eXo WebOS Config</name>
-  <version>1.0.2</version>
+  <version>1.2</version>
   <packaging>pom</packaging>
 
   <modules>
@@ -63,7 +63,7 @@
             </property>
             <property>
               <name>mock.portal.dir</name>
-              <value>${exo.projects.directory.src}/portal/branches/2.1.1/web/portal/src/main/webapp</value>
+              <value>${exo.projects.directory.src}/portal/tags/2.2/web/portal/src/main/webapp</value>
             </property>
             <property>
               <name>org.apache.commons.logging.Log</name>
@@ -122,14 +122,13 @@
         <activeByDefault>true</activeByDefault>
       </activation>
       <properties>
-        <exo.platform.version>2.0</exo.platform.version>
-        <org.exoplatform.kernel.version>2.0.1</org.exoplatform.kernel.version>
-        <org.exoplatform.core.version>2.0.2</org.exoplatform.core.version>
-        <org.exoplatform.ws.version>1.1</org.exoplatform.ws.version>
-        <org.exoplatform.jcr.version>1.8.2</org.exoplatform.jcr.version>
-        <org.exoplatform.pc.version>2.0</org.exoplatform.pc.version>
-        <org.exoplatform.portal.version>2.1.1</org.exoplatform.portal.version>
-        <org.exoplatform.webos.version>1.0.2</org.exoplatform.webos.version>
+        <org.exoplatform.kernel.version>2.0.2</org.exoplatform.kernel.version>
+        <org.exoplatform.core.version>2.1</org.exoplatform.core.version>
+        <org.exoplatform.ws.version>1.2.1</org.exoplatform.ws.version>
+        <org.exoplatform.jcr.version>1.9.1</org.exoplatform.jcr.version>
+        <org.exoplatform.pc.version>2.0.1</org.exoplatform.pc.version>
+        <org.exoplatform.portal.version>2.2</org.exoplatform.portal.version>
+        <org.exoplatform.webos.version>1.2</org.exoplatform.webos.version>
         <test.classes>Test</test.classes>
         <test.skip>true</test.skip>
       </properties>
