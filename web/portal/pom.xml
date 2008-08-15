@@ -29,7 +29,7 @@
               </excludes>
             </resource>
             <resource>
-              <directory>${exo.projects.directory.src}/portal/branches/2.2.1/web/portal/target/exo.portal.web.portal-${org.exoplatform.portal.version}</directory>
+              <directory>${exo.projects.directory.src}/portal/branches/2.2.1/web/portal/target/exo.portal.web.portal-${org.exoplatform.portal.version}-SNAPSHOT</directory>
               <includes>
                 <include>WEB-INF/classes/locale/portal/</include>
 			    	    <include>WEB-INF/conf/uiconf/portal/webui/container/</include>
