@@ -1,0 +1,231 @@
+
+Release Notes - exo-webos - Version webos-1.5
+
+** Bug
+    * [WEBOS-1] - [WEBOS PRODUCT]: Error in displaying Sitemap Portlet
+    * [WEBOS-2] - [WEBOS PRODUCT]: Error dispaly when using scroll bar 
+    * [WEBOS-3] - WEBOS PRODUCT]: Fox + IE6: Error in displaying Manage page
+    * [WEBOS-4] - [WEBOS PRODUCT]: I.E.6 - Error in displaying when create & edit page wizard
+    * [WEBOS-5] - [WEBOS PRODUCT] - IE: Lose stylesheet in login form when portal current is vista skin
+    * [WEBOS-6] - [WEBOS PRODUCT]: Lose stysheet when add new application and change skin
+    * [WEBOS-7] - Lose stylesheet in homepage & Application portlet
+    * [WEBOS-8] - I.E.6: Error in displaying Page Content in Vista & Mac skin when edit current portal
+    * [WEBOS-9] - I.E: Error in displaying Permission Selector with skin Mac
+    * [WEBOS-10] - I.E.6: Error in displaying when remove an application form dockbar
+    * [WEBOS-12] - I.E.6:Error in display in Widget Containers Management with vista skin
+    * [WEBOS-13] - I.E.6: Error in display when create new node with vista skin
+    * [WEBOS-14] - I.E.6: Error in displaying scroll drop & drap with special case in Mac skin
+    * [WEBOS-16] - Error in dispaying in Page Content when edit current portal with Vista & Mac skin
+    * [WEBOS-17] - I.E.6: Error in display in Edit Permission with Vista skin
+    * [WEBOS-18] - Can't display application from dockbar when change skin 
+    * [WEBOS-19] - Can't display Icon name when Edit this node
+    * [WEBOS-20] - IE7: Error in display when preview mode some portlet with skin Vista and Mac
+    * [WEBOS-21] - I.E.6: Error in displaying Page Navigation in skin Vista
+    * [WEBOS-23] - I.E: Lose application from dockbar 
+    * [WEBOS-24] - Error when delete application from dockbar 
+    * [WEBOS-25] - Can't action when Select permission in Application Reegistry portlet
+    * [WEBOS-26] - Error display when create page wizard with Default & Mac skin
+    * [WEBOS-27] - I.E.6: Error in displaying New Account portlet with Default & Mac skin
+    * [WEBOS-28] - Error in displaying when edit category in Application registry portlet with Default & Mac
+    * [WEBOS-29] - I.E: Error when remove application from dockbar with default skin
+    * [WEBOS-30] - Error when add more new tab in Web Explorer portlet
+    * [WEBOS-32] - Can't action Select Permission when Set Permission for Portal, Page, Portlet, Node, Category
+    * [WEBOS-33] - Nothing happen when click on Edit category in Application registry portelt
+    * [WEBOS-34] - Error with * for required fields when create page wizard with 3 skins
+    * [WEBOS-35] - Error in displaying when create new node
+    * [WEBOS-36] - I.E: Lose application from dockbar when create new page Navigation
+    * [WEBOS-37] - [Unknow error ] when create new portal 
+    * [WEBOS-38] - I.E: Error when close User workspace or change skin in Vista skin
+    * [WEBOS-39] - I.E.6: Error when click check box Publish the page during a period of time only when create page wizard with Default & Mac skin
+    * [WEBOS-40] - Error when click check box validate value
+    * [WEBOS-65] - [In FF3 beta 5]: Error displaying in dockbar when click right to delete application with 3 skin
+    * [WEBOS-66] - Error display when create category name in special case
+    * [WEBOS-67] - Allways show message "No result found" when search a string is unavailable and after that create new page
+    * [WEBOS-69] - I.E.6: Error when select container have 2 or 3 tab in Mac skin
+    * [WEBOS-70] - IE6: Error in Add Appication form with Default skin when create group in special case
+    * [WEBOS-71] - Still seeing some portlet when does not have access permission of portlet
+    * [WEBOS-72] - Litte Error displaying in Select Permission form of Application registry portlet with Default skin
+    * [WEBOS-73] - Litte Error displaying in Group Management form with Mac skin
+    * [WEBOS-75] - IE6: Don't display Select Application with Default skin
+    * [WEBOS-76] - Error displaying  when move cursor on Dockbar
+    * [WEBOS-77] - IE: Error displaying when edit current portal in special case
+    * [WEBOS-79] - Error some form when change language is French
+    * [WEBOS-80] - Show exception when select continuous a application to add into dockbar
+    * [WEBOS-81] - IE6: Error displaying when eidt current portal with Vista skin in special case
+    * [WEBOS-82] - IE6: Error displaying when create/edit page wizard with Vista skin
+    * [WEBOS-83] - IE6: Error displaying when select tab page config with all skins
+    * [WEBOS-84] - Error displaying UI Portal with all skins
+    * [WEBOS-85] - IE6: Error displaying in Widget container management in special case with Mac skin
+    * [WEBOS-86] - IE: Error displaying in UI Container Option in special case with all skins
+    * [WEBOS-87] - Don't show page/node in Navigation portlet in the first time
+    * [WEBOS-90] - Error UI in IFrame portlet
+    * [WEBOS-91] - IE6: Error display on dockbar when open control workspace
+    * [WEBOS-92] - Error displaying in edit crruent portal when drag & drop tab page config with Vista skin
+    * [WEBOS-93] - FF3: Still seeing tooltip of portlet althought it was removed from dockbar
+    * [WEBOS-94] - Dockbar display under portlet
+    * [WEBOS-95] - FF3: Can't add new Tab after it was deleted
+    * [WEBOS-96] - IE6: Error when drag & drop tab page config in Edit current portal
+    * [WEBOS-97] - IE7: Little error when right-click to remove application from dockbar with Default skin
+    * [WEBOS-98] - Error display when create category name in application registry portlet in special case
+    * [WEBOS-99] - Error displaying when view portlet in some case
+    * [WEBOS-100] - Error when delete welcome widget
+    * [WEBOS-101] - Horizontal scroll blink when mouse over it in Add Application form.
+    * [WEBOS-102] - Bug JS - Error when view portlet
+    * [WEBOS-103] - Nothing happen when click create page wizard
+    * [WEBOS-105] - FF3: Error displaying when remove application from dockbar with Default skin
+    * [WEBOS-106] - Throw exception when create/edit page wizard
+    * [WEBOS-108] - Lose resource bundle in 'exo message' when user don't have permission to edit/view/delete this page
+    * [WEBOS-109] - Nothing happen when click new node
+    * [WEBOS-110] - Show exception when select Manage Pages
+    * [WEBOS-111] - Error when edit page in Manage pages
+    * [WEBOS-117] - Nothing happen when click addn new node
+    * [WEBOS-118] - Show exception when click Manage Page
+    * [WEBOS-119] - Can't keep intact state when change skin/language between some portlets
+    * [WEBOS-120] - Show exception when add Dashboard portlet into Dockbar
+    * [WEBOS-121] - IE6: Error in Edit current portal when resotre down window
+    * [WEBOS-122] - Error when set permission for category in Application registry portlet
+    * [WEBOS-123] - Lose style sheet in Default skin
+    * [WEBOS-124] - Error UI in Calendar widget with Mac skin
+    * [WEBOS-125] - IE6: Lose Style sheet on dockbar with all skin
+    * [WEBOS-126] - IE6: NullPointerException when edit current portal
+    * [WEBOS-127] - IE6: Error when change skin in Edit page & Navigation
+    * [WEBOS-129] - IE6: Can't Sign In on dockbar
+    * [WEBOS-130] - IE6: Little error in Edit Page & Navi with all skin
+    * [WEBOS-131] - Error when click Page Navigations in the first time
+    * [WEBOS-136] - Have trouble on dockbar when move cursor
+    * [WEBOS-137] - IE6: Error UI when edit category with Default skin
+    * [WEBOS-138] - IE6: Don't load images on dockbar in Edit Page & Navigation
+    * [WEBOS-139] - Show exception when edit current portal
+    * [WEBOS-140] - Lose style sheet in Homepage portlet
+    * [WEBOS-141] - Duplicate tooltip when resize portlet 
+    * [WEBOS-142] - Error when edit current portal 
+    * [WEBOS-143] - Bug when resize portlet on UI Desktop Page
+    * [WEBOS-144] - Don't show User workspace when log in by John
+    * [WEBOS-145] - Can't remove application from dockbar when login by John
+    * [WEBOS-146] - Error when login program in special case
+    * [WEBOS-152] - Show duplicate membership type "*" in Permission Selector form
+    * [WEBOS-160] - FF2: Little error in dockbar when apply to RTL in Default skin ( Bug JS)
+    * [WEBOS-164] - IE6: Error displaying in Dockbar when click Abort button in create/edit page wizard
+    * [WEBOS-165] - Have problem when click Page Navigation on dockbar in public mode
+    * [WEBOS-166] - Little error when right click to remove application from dockbar in Default skin
+    * [WEBOS-167] - Position of UIRightClick PopupMenu is not correct when covert to RTL in Vista skin
+    * [WEBOS-168] - Little error in UI RightClick Popupmenu when apply to RTL in Mac skin
+    * [WEBOS-169] - Have problem when move cursor in dockbar in Default skin
+    * [WEBOS-170] - Error displaying in Page Navigation when apply to RTL in private mode
+    * [WEBOS-171] - IE6: Little error displaying on dockbar with Vista skin
+    * [WEBOS-186] - FF2: Little error displaying in Decoration Themes when apply to RTL in Default skin
+    * [WEBOS-187] - Error displaying in New Account portlet when apply to RTL in Vista skin
+    * [WEBOS-189] - IE: Error UI when edit current portlet with all skin
+    * [WEBOS-190] - FF2: Error UI in Permission Setting tab when apply to RTL in Vista skin
+    * [WEBOS-191] - Error UI in Icon tab when apply to RTL in Vista skin
+    * [WEBOS-192] - Position of edit gadget is not correct with Default and Vista skin
+    * [WEBOS-193] - Error UI in Application registry portlet with all skin
+    * [WEBOS-194] - Bug JS: Error when resize area portlet wth Aracbic language
+    * [WEBOS-195] - IE6: Show message when edit current portal in special case
+    * [WEBOS-196] - IE: Can't drag & Drop Page Body in Edit current portal
+    * [WEBOS-197] - Lose some icon in MiddleBar on User workspace in special case
+    * [WEBOS-198] - Some problem UI in Page Navigation in Public mode
+    * [WEBOS-202] - Show exception when add continuous application  into dockbar
+    * [WEBOS-203] - Error when click edit gadget
+    * [WEBOS-204] - IE6: Little error displaying in Gadget on desktop page with all skin
+    * [WEBOS-205] - Have space between UIDropDownTitle and UI Tree Container in Edit Page & Navi with Mac and Default skin
+    * [WEBOS-206] - IE6: Error UI in Icon tab with Default skin
+    * [WEBOS-208] - Error when Restore Down window
+    * [WEBOS-209] - Error when view portlet with maximize on Vista skin
+    * [WEBOS-210] - IE: Error when preview portal with Mac and Vista skin
+    * [WEBOS-211] - Error UI in WIndowPortletIcon when view all portlet on desktop page
+    * [WEBOS-212] - IE6: Don't show popup message when view New Account portlet in Arabic language
+    * [WEBOS-213] - IE6: Don't show SlideBar Button when login to program in the first time with Arabic language 
+    * [WEBOS-214] - Show message when select New Staff in Page Navigation with French language
+    * [WEBOS-215] - IE6: Error UI in edit current portal in vista skin when have UIFromTabPane
+    * [WEBOS-216] - Error UI in Add Application form in Default skin
+    * [WEBOS-217] - Don't show two icon " Show/Hide Portelt and Gadget" on dockbar in Default skin when select platform
+    * [WEBOS-218] - Error UI in Decoration Themes in Mac style
+    * [WEBOS-219] - Little error UI in Sitemap portlet with Mac skin when change language to Arabic
+    * [WEBOS-220] - IE7: Little error in popup message when change language to Arabic
+    * [WEBOS-222] - IE6: Still action on dockbar in Edit Page & Navigation
+    * [WEBOS-223] - Still keep first language after change to other language 
+    * [WEBOS-224] - IE6: Lose Icon on dockbar in public mode
+    * [WEBOS-226] - Don't show scroll when view portlet in the first time
+    * [WEBOS-228] - Error displaying when preview portal have dashboard portlet with Arabic language 
+    * [WEBOS-229] - IE: Error UI when add new tab in Web Explorer with all skin
+    * [WEBOS-230] - Display of portlet is not correct when open control workspace in the first time
+    * [WEBOS-231] - IE7: Don't select page(node) in Page Navigation on dockbar with Mac skin in Arabic language
+    * [WEBOS-232] - IE: Error UI in Page Navigation in public mode when have sub-page with Vista skin
+    * [WEBOS-233] - Error when edit gadget and click refresh
+    * [WEBOS-234] - Can't do some action in Edit Page & Navigation
+    * [WEBOS-261] - Error when preview portal in edit current portal with Mac and Vista skin in Arabic language
+    * [WEBOS-262] - IE6: Error when Restore Down window with all portlet when don't check Show Infor Bar
+    * [WEBOS-263] - Don't show new gadget in dashboard portlet after add an application into dockbar
+    * [WEBOS-264] - Error when edit mode in Gadget Wrapper Portlet
+    * [WEBOS-265] - IE: Lose boder in Permission Grid when List Permission form appear with all skin
+    * [WEBOS-266] - Error in User Workspace when click Exo Start when apply to RTL
+    * [WEBOS-267] - Have different about display bewteen Gadget Wrapper Portlet and Dashboard portlet
+    * [WEBOS-268] - IE: Error display when drag & drop page body in edit current portal with all skin
+    * [WEBOS-269] - Still click User Control Workspace when UI Add Application form appear
+    * [WEBOS-270] - Error displaying when right click to quit or remove application on docbar with Vista skin
+    * [WEBOS-271] - FF2: Error UI in Add Application form in Vista skin
+    * [WEBOS-272] - IE7: Don't show Gadget Category in Dashboard portlet when click refresh
+    * [WEBOS-273] - IE6: Little error with gadget width on desktop page with all skin
+    * [WEBOS-274] - Don't view application on desktop page
+    * [WEBOS-275] - IE: Don't show UIFormTabPane when click refresh
+    * [WEBOS-276] - IE: Error UI in desktop page with all skin
+    * [WEBOS-277] - IE6: Error UI in Page Navigation when there's a page at level 3 and more in Arabic language
+    * [WEBOS-278] - IE: Error UI on dockbar when remove some application on dockbar
+    * [WEBOS-279] - IE6: Don't show Iframe portlet on dockbar in public mode
+    * [WEBOS-280] - Have proplem when add a remote gadget on desktop page and change skin
+    * [WEBOS-281] - Error in Dashboard portlet when set Number of columns are 4 and change to Arabic language
+    * [WEBOS-282] - Error UI in homepage when delete all Page(node) in Portal 
+    * [WEBOS-283] - Error UI in tab page config in Edit curernt portal with all skin
+    * [WEBOS-284] - IE7: Error Drag & Drop Tab Page config in edit current portal
+    * [WEBOS-285] - Little error UI in Menu Container when change language to Arabic
+
+** Delivery Item
+    * [WEBOS-185] - Release WebOS 1.5 RC1
+
+
+** Improvement
+    * [WEBOS-53] - In WebOS, should set min-width and min-heigth for portlet when user resize portlet  by using mouse
+    * [WEBOS-60] - Should have scroll in desktop page when restore down the windown
+    * [WEBOS-112] - Dispose markup on application quit
+    * [WEBOS-113] - Allow to select language with normal user after login to access portal
+    * [WEBOS-116] - Provide a way to specify the state of portlet when putted in the desktop page
+    * [WEBOS-147] - Make the Gadgets Portlet available in the application registry by default
+    * [WEBOS-148] - Should add a navigation icon in the dock
+    * [WEBOS-188] - Little error in Edit mode portlet with all portlet with Vista skin
+
+** New Feature
+    * [WEBOS-115] - Add a SignOut link in the Dock to allow people to sign-out when they do not have access to Workspace or Logout Widget
+    * [WEBOS-149] - Dock applications lazy loading
+
+** Task
+    * [WEBOS-104] - Splip Stylesheet from webosResource
+    * [WEBOS-128] - [public mode] has some errors when validate HTML code
+    * [WEBOS-153] - Configure WebOS to support Arabic and VNese language and RTL skin for WebOS
+    * [WEBOS-159] - Add "quit" action on right click on the application icon in the dock
+    * [WEBOS-199] - Change tooltip for all page on dockbar when change language to VNese
+    * [WEBOS-221] - Create "Quit" Icon when right click on the application icon in the dock
+    * [WEBOS-225] - Change Pointer icon from Move to Link Select in Vista skin of all portlet
+
+** Sub-task
+    * [WEBOS-41] - Unable to locate a login configuration
+    * [WEBOS-150] - [DEV] Add Sign-out link on Dock bar
+    * [WEBOS-151] - [TEST] Test for sign in webos
+    * [WEBOS-154] - find the way to render a portlet can be able to load itself independently
+    * [WEBOS-155] - re-factor the portlet html fragment
+    * [WEBOS-156] - implement javascript to make the portlet to be loaded when invisible
+    * [WEBOS-157] - [TEST] Make sure the change doesn't impact to the classic page
+    * [WEBOS-172] - [Test] : Add quit action on right click on the application icon in the dock
+    * [WEBOS-173] - [Test]: Don't load images on dockbar in Edit Page & Navi
+    * [WEBOS-174] - [DEV] Add "quit" action on right click on the application icon in the dockbar
+    * [WEBOS-175] - [DEV]: Don't load images on dockbar in Edit Page & navi
+    * [WEBOS-176] - [DEV]: Error when login program in special case
+    * [WEBOS-177] - [TEST]: Error when login program in special case
+    * [WEBOS-179] - [DEV]: Have problem when move cursor in dockbar in Default skin
+    * [WEBOS-180] - [TEST]: Have problem when move cursor in dockbar in Default skin
+    * [WEBOS-181] - [DEV]: Should have scroll in desktop page when restore down the windown
+    * [WEBOS-182] - [TEST]: Should have scroll in desktop page when restore down the windown
+    * [WEBOS-183] - [DEV]: should set min-width and min-heigth for portlet when user resize portlet by using mouse
+    * [WEBOS-184] - [TEST]:should set min-width and min-heigth for portlet when user resize portlet by using mouse
+
+
