@@ -1,11 +1,28 @@
 <project>
 
+  <parent>
+    <groupId>org.exoplatform</groupId>
+    <artifactId>parent</artifactId>
+    <version>1.1.1</version>
+  </parent>
+
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.exoplatform.webos</groupId>
   <artifactId>config</artifactId>
   <name>eXo WebOS Config</name>
   <version>1.1</version>
   <packaging>pom</packaging>
+
+  <properties>
+     <exo.product.name>exo-webos</exo.product.name>
+     <exo.product.specification>1.0</exo.product.specification>
+  </properties>
+  <scm>
+    <connection>scm:svn:http://svn.exoplatform.org/svnroot/exoplatform/projects/webos/branches/1.1</connection>
+    <developerConnection>scm:svn:http://svn.exoplatform.org/svnroot/exoplatform/projects/webos/branches/1.1</developerConnection>
+    <url>http://fisheye.exoplatform.org/browse/projects-webos/branches/1.1</url>
+  </scm>
+
 
   <modules>
     <module>web/portal</module>
