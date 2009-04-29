@@ -13,9 +13,19 @@
   <version>1.5.1</version>
   <packaging>pom</packaging>
 
+  <properties>
+     <exo.product.name>exo-webos</exo.product.name>
+     <exo.product.specification>1.5</exo.product.specification>
+  </properties>
+  <scm>
+    <connection>scm:svn:http://svn.exoplatform.org/svnroot/exoplatform/projects/webos/tags/1.5.1</connection>
+    <developerConnection>scm:svn:http://svn.exoplatform.org/svnroot/exoplatform/projects/webos/tags/1.5.1</developerConnection>
+    <url>http://fisheye.exoplatform.org/browse/projects-webos/tags/1.5.1</url>
+  </scm>
+
   <modules>
     <module>web/portal</module>
-	<module>web/webosResources</module>
+    <module>web/webosResources</module>
   </modules>
 
   <build>
