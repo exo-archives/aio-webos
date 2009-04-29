@@ -1,2 +1,2 @@
-<Context path="/webosResources" docBase="../../../eXoProjects/webos/branches/1.5.x/web/webosResources/src/main/webapp" 
+<Context path="/webosResources" docBase="../../../eXoProjects/webos/tags/1.5.1/web/webosResources/src/main/webapp" 
          debug="0" reloadable="true" />
