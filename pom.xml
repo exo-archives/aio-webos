@@ -10,7 +10,7 @@
   <groupId>org.exoplatform.webos</groupId>
   <artifactId>config</artifactId>
   <name>eXo WebOS Config</name>
-  <version>1.5.2-SNAPSHOT</version>
+  <version>1.5.2</version>
   <packaging>pom</packaging>
 
   <properties>
@@ -18,9 +18,9 @@
      <exo.product.specification>1.5</exo.product.specification>
   </properties>
   <scm>
-    <connection>scm:svn:http://svn.exoplatform.org/svnroot/exoplatform/projects/webos/branches/1.5.x</connection>
-    <developerConnection>scm:svn:http://svn.exoplatform.org/svnroot/exoplatform/projects/webos/branches/1.5.x</developerConnection>
-    <url>http://fisheye.exoplatform.org/browse/projects-webos/branches/1.5.x</url>
+    <connection>scm:svn:http://svn.exoplatform.org/svnroot/exoplatform/projects/webos/tags/1.5.2</connection>
+    <developerConnection>scm:svn:http://svn.exoplatform.org/svnroot/exoplatform/projects/webos/tags/1.5.2</developerConnection>
+    <url>http://fisheye.exoplatform.org/browse/projects-webos/tags/1.5.2</url>
   </scm>
 
 
@@ -144,10 +144,10 @@
         <org.exoplatform.kernel.version>2.0.7</org.exoplatform.kernel.version>
         <org.exoplatform.core.version>2.1.5</org.exoplatform.core.version>
         <org.exoplatform.ws.version>1.3.3</org.exoplatform.ws.version>
-        <org.exoplatform.jcr.version>1.10.3</org.exoplatform.jcr.version>
-        <org.exoplatform.pc.version>2.0.6</org.exoplatform.pc.version>
-        <org.exoplatform.portal.version>2.5.3</org.exoplatform.portal.version>
-        <org.exoplatform.webos.version>1.5.2-SNAPSHOT</org.exoplatform.webos.version>
+        <org.exoplatform.jcr.version>1.10.4</org.exoplatform.jcr.version>
+        <org.exoplatform.pc.version>2.0.7</org.exoplatform.pc.version>
+        <org.exoplatform.portal.version>2.5.5</org.exoplatform.portal.version>
+        <org.exoplatform.webos.version>1.5.2</org.exoplatform.webos.version>
         <test.classes>Test</test.classes>
         <test.skip>true</test.skip>
       </properties>
