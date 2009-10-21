@@ -7,7 +7,7 @@
   <page-nodes>   
     <node>
       <uri>administration</uri>
-      <name>Administration</name>
+      <name>administration</name>
       <label>#{administration.title}</label>     
       <page-reference>group::platform/administrators::administration</page-reference>         
     </node>                        
