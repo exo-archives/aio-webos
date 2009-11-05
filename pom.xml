@@ -18,9 +18,9 @@
      <exo.product.specification>1.5</exo.product.specification>
   </properties>
   <scm>
-    <connection>scm:svn:http://svn.exoplatform.org/svnroot/exoplatform/projects/webos/branches/1.5.x</connection>
-    <developerConnection>scm:svn:http://svn.exoplatform.org/svnroot/exoplatform/projects/webos/branches/1.5.x</developerConnection>
-    <url>http://fisheye.exoplatform.org/browse/projects-webos/branches/1.5.x</url>
+    <connection>scm:svn:http://svn.exoplatform.org/svnroot/exoplatform/projects/webos/tags/1.5.3.1</connection>
+    <developerConnection>scm:svn:http://svn.exoplatform.org/svnroot/exoplatform/projects/webos/tags/1.5.3.1</developerConnection>
+    <url>http://fisheye.exoplatform.org/browse/projects/webos/tags/1.5.3.1</url>
   </scm>
 
 
@@ -147,7 +147,6 @@
         <org.exoplatform.jcr.version>1.10.5.1</org.exoplatform.jcr.version>
         <org.exoplatform.pc.version>2.0.7</org.exoplatform.pc.version>
         <org.exoplatform.portal.version>2.5.6.2</org.exoplatform.portal.version>
-        <org.exoplatform.webos.version>1.5.3</org.exoplatform.webos.version>
         <test.classes>Test</test.classes>
         <test.skip>true</test.skip>
       </properties>
