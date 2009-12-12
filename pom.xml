@@ -22,7 +22,6 @@
     <org.exoplatform.jcr.version>1.10.5</org.exoplatform.jcr.version>
     <org.exoplatform.pc.version>2.0.7</org.exoplatform.pc.version>
     <org.exoplatform.portal.version>2.5.6.1</org.exoplatform.portal.version>
-    <org.exoplatform.webos.version>1.5.3-SNAPSHOT</org.exoplatform.webos.version>
   </properties>
   
   <scm>
