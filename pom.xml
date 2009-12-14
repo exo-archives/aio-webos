@@ -33,6 +33,7 @@
   <modules>
     <module>portal</module>
     <module>webosResources</module>
+    <module>packaging</module>
   </modules>
 
   <build>
@@ -75,7 +76,7 @@
             </property>
             <property>
               <name>mock.portal.dir</name>
-              <value>${exo.projects.directory.src}/portal/trunk/web/portal/src/main/webapp</value>
+              <value>${exo.projects.directory.src}/portal/branches/1.5.x/web/portal/src/main/webapp</value>
             </property>
             <property>
               <name>org.apache.commons.logging.Log</name>
