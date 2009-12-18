@@ -38,7 +38,7 @@ function getProduct(version) {
   product.addServerPatch("jboss",  portal.server.jboss.patch) ;
   product.addServerPatch("jbossear",  portal.server.jbossear.patch) ;
   product.addServerPatch("jonas",  portal.server.jonas.patch) ;
-  product.addServerPatch("ear",  portal.server.websphere.patch) ;
+  product.addServerPatch("wasear",  portal.server.websphere.patch) ;
   
   product.module = webos ;
   product.dependencyModule = [kernel, core, eXoPortletContainer, ws, eXoJcr, portal];
