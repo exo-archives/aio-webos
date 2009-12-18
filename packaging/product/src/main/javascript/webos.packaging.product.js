@@ -8,6 +8,7 @@ function getProduct(version) {
   product.portalwar = "portal.war" ;
   product.codeRepo = "webos" ;
   product.useWorkflow = false;
+  product.version = "${project.version}" ;
   product.serverPluginVersion = "${org.exoplatform.portal.version}" ;
     
   var kernel = Module.GetModule("kernel") ;
