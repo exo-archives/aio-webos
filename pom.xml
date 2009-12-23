@@ -10,7 +10,7 @@
   <groupId>org.exoplatform.webos</groupId>
   <artifactId>webos-parent</artifactId>
   <name>eXo WebOS Parent</name>
-  <version>1.5.4</version>
+  <version>1.5.5-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <properties>
@@ -28,9 +28,9 @@
   </properties>
   
   <scm>
-    <connection>scm:svn:http://svn.exoplatform.org/svnroot/exoplatform/projects/webos/tags/1.5.4</connection>
-    <developerConnection>scm:svn:http://svn.exoplatform.org/svnroot/exoplatform/projects/webos/tags/1.5.4</developerConnection>
-    <url>http://fisheye.exoplatform.org/browse/projects-webos/tags/1.5.4</url>
+    <connection>scm:svn:http://svn.exoplatform.org/svnroot/exoplatform/projects/webos/branches/1.5.x</connection>
+    <developerConnection>scm:svn:http://svn.exoplatform.org/svnroot/exoplatform/projects/webos/branches/1.5.x</developerConnection>
+    <url>http://fisheye.exoplatform.org/browse/projects-webos/branches/1.5.x</url>
   </scm>
 
   <modules>
