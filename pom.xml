@@ -164,5 +164,6 @@
     <module>portal</module>
     <module>webosResources</module>
     <module>packaging</module>
+    <module>extension</module>
   </modules>
 </project>
