@@ -29,11 +29,16 @@ function getProduct(version) {
 	product.addDependencies(portal.web.eXoResources);
 	product.addDependencies(webos.web.webosResources);
 	product.addDependencies(portal.web.portal) ;
-  product.addDependencies(portal.sample.extension) ;
+ 
+  portal.starter = new Project("org.exoplatform.portal", "exo.portal.starter.war", "war", portal.version);
+  portal.starter.deployName = "starter";
+  
+  product.addDependencies(portal.starter);
+  product.addDependencies(webos.web.extension.war);
 
   product.addDependencies(portal.ibm.jdk.support);
 	
-  product.addDependencies(webos.web.webosportal) ;
+ /* product.addDependencies(webos.web.webosportal) ; */
   
   product.addServerPatch("tomcat", portal.server.tomcat.patch) ;
   product.addServerPatch("jboss",  portal.server.jboss.patch) ;

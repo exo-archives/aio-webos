@@ -17,10 +17,17 @@ function getModule(params) {
   module.web = {}
   module.web.webosResources = 
   	new Project("org.exoplatform.webos", "exo.webos.web.webosResources", "war", module.version) ;
+  /**
   module.web.webosportal = 
     new Project("org.exoplatform.webos", "exo.webos.web.portal", "exo-portal", module.version).
     addDependency(jcr.frameworks.web).
     addDependency(jcr.frameworks.command) ;
+
+  **/
+  module.web.extension = {};
+  module.web.extension.war =
+    new Project("org.exoplatform.webos", "exo.webos.web.extension.war", "war", module.version).
+    addDependency(new Project("org.exoplatform.webos", "exo.webos.web.extension.jar", "jar", module.version)).addDependency(new Project("org.exoplatform.webos", "exo.webos.web.extension.config", "jar", module.version));
 
   return module;
 }

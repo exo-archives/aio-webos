@@ -27,7 +27,7 @@
   </parent> 
 
   <modelVersion>4.0.0</modelVersion>
-  <artifactId>exo.webos.web.config</artifactId>
+  <artifactId>exo.webos.web.extension.config</artifactId>
   <name>GateIn WebOS Extension Configuration</name>
   <packaging>jar</packaging>
   <url>http://www.exoplatform.org</url> 
