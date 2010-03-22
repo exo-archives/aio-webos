@@ -22,7 +22,7 @@
   <parent>
     <groupId>org.exoplatform.webos</groupId>
     <artifactId>exo.webos.packaging</artifactId>
-    <version>1.5.5-SNAPSHOT</version>
+    <version>1.6-SNAPSHOT</version>
   </parent>
   <artifactId>exo.webos.packaging.assembly</artifactId>
   <packaging>pom</packaging>
@@ -63,12 +63,6 @@
       <type>js</type>
     </dependency>
     <dependency>
-      <groupId>org.exoplatform.portletcontainer</groupId>
-      <artifactId>portletcontainer.packaging.module</artifactId>
-      <version>${org.exoplatform.portletcontainer.version}</version>
-      <type>js</type>
-    </dependency>
-    <dependency>
       <groupId>org.exoplatform.portal</groupId>
       <artifactId>portal.packaging.module</artifactId>
       <version>${org.exoplatform.portal.version}</version>
@@ -77,13 +71,13 @@
     <dependency>
       <groupId>org.exoplatform.webos</groupId>
       <artifactId>webos.packaging.module</artifactId>
-      <version>1.5.5-SNAPSHOT</version>
+      <version>1.6-SNAPSHOT</version>
       <type>js</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.webos</groupId>
       <artifactId>webos.packaging.product</artifactId>
-      <version>1.5.5-SNAPSHOT</version>
+      <version>1.6-SNAPSHOT</version>
       <type>js</type>
     </dependency>
   </dependencies>
@@ -95,6 +89,7 @@
           <plugin>
             <groupId>org.exoplatform.maven.plugins</groupId>
             <artifactId>maven-exobuild-plugin</artifactId>
+            <version>1.2.1-SNAPSHOT</version>
             <executions>
               <execution>
                 <phase>install</phase>

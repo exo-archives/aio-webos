@@ -26,29 +26,49 @@
   </parent>
   <groupId>org.exoplatform.webos</groupId>
   <artifactId>webos-parent</artifactId>
-  <version>1.5.5-SNAPSHOT</version>
+  <version>1.6-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>eXo WebOS</name>
   <scm>
-    <connection>scm:svn:http://svn.exoplatform.org/projects/webos/branches/1.5.x</connection>
-    <developerConnection>scm:svn:http://svn.exoplatform.org/projects/webos/branches/1.5.x</developerConnection>
-    <url>http://fisheye.exoplatform.org/browse/projects/webos/branches/1.5.x</url>
+    <connection>scm:svn:http://svn.exoplatform.org/projects/webos/branches/GateInIntegrated</connection>
+    <developerConnection>scm:svn:http://svn.exoplatform.org/projects/webos/branches/GateInIntegrated</developerConnection>
+    <url>http://fisheye.exoplatform.org/browse/projects/webos/branches/GateInIntegrated</url>
   </scm>
   <ciManagement>
     <system>hudson</system>
-    <url>http://builder.exoplatform.org/hudson/job/webos-1.5.x-ci/</url>
+    <url>http://builder.exoplatform.org/hudson/job/webos-GateInIntegrated-ci/</url>
   </ciManagement>
   <properties>
-    <exo.product.name>exo-webos</exo.product.name>
-    <exo.product.specification>1.5</exo.product.specification>
-    <org.exoplatform.kernel.version>2.0.10-SNAPSHOT</org.exoplatform.kernel.version>
-    <org.exoplatform.core.version>2.1.8-SNAPSHOT</org.exoplatform.core.version>
-    <org.exoplatform.ws.version>1.3.6-SNAPSHOT</org.exoplatform.ws.version>
-    <org.exoplatform.jcr.version>1.10.7-SNAPSHOT</org.exoplatform.jcr.version>
-    <org.exoplatform.portletcontainer.version>2.0.9-SNAPSHOT</org.exoplatform.portletcontainer.version>
-    <org.exoplatform.portal.version>2.5.8-SNAPSHOT</org.exoplatform.portal.version>
-    <org.exoplatform.exopackage.version>1.2.0</org.exoplatform.exopackage.version>
-  </properties>
+    <org.exoplatform.kernel.version>2.2.0-GA</org.exoplatform.kernel.version>
+    <org.exoplatform.core.version>2.3.0-GA</org.exoplatform.core.version>
+    <org.exoplatform.ws.version>2.1.0-GA</org.exoplatform.ws.version>
+    <org.exoplatform.jcr.version>1.12.0-GA</org.exoplatform.jcr.version>
+  	<org.exoplatform.portal.version>3.0.0-GA</org.exoplatform.portal.version>
+	  <exo.product.specification>1.5</exo.product.specification>
+	  <org.exoplatform.exopackage.version>1.2.0</org.exoplatform.exopackage.version>
+    <org.jibx.version>1.2.1</org.jibx.version>
+    <org.shindig.version>1.0-r790473-Patch02</org.shindig.version>
+    <org.gatein.common.version>2.0.0-GA</org.gatein.common.version>
+    <org.gatein.wci.version>2.0.0-GA</org.gatein.wci.version>
+    <org.gatein.pc.version>2.1.0-GA</org.gatein.pc.version>
+    <org.picketlink.idm>1.1.1.GA</org.picketlink.idm>
+    <org.gatein.wsrp.version>1.0.0-GA</org.gatein.wsrp.version>
+    <org.gatein.mop.version>1.0.0</org.gatein.mop.version>
+    <org.slf4j.version>1.5.6</org.slf4j.version>
+    <rhino.version>1.6R5</rhino.version>
+    <org.codehaus.groovy.version>1.6.5</org.codehaus.groovy.version>
+    <javax.servlet.version>2.5</javax.servlet.version>
+    <version.chromattic>1.0.0</version.chromattic>
+    <version.reflect>1.0.0</version.reflect>
+    <jcip.version>1.0</jcip.version>
+
+    <!-- ************** -->
+    <!-- Build settings -->
+    <!-- ************** -->
+
+    <!-- maven-enforcer-plugin -->
+    <jdk.min.version>1.6</jdk.min.version>
+ </properties>
   <build>
     <resources>
       <resource>
@@ -90,7 +110,7 @@
             </property>
             <property>
               <name>mock.portal.dir</name>
-              <value>${exo.projects.directory.src}/portal/branches/1.5.x/web/portal/src/main/webapp</value>
+              <value>${exo.projects.directory.src}/portal/branches/GateInIntegrated/web/portal/src/main/webapp</value>
             </property>
             <property>
               <name>org.apache.commons.logging.Log</name>
