@@ -40,9 +40,9 @@ function getProduct(version) {
 	
  /* product.addDependencies(webos.web.webosportal) ; */
   
-  product.addServerPatch("tomcat", portal.server.tomcat.patch) ;
-  product.addServerPatch("jboss",  portal.server.jboss.patch) ;
-  product.addServerPatch("jbossear",  portal.server.jbossear.patch) ;
+  product.addServerPatch("tomcat", webos.server.tomcat.patch) ;
+  //product.addServerPatch("jboss",  portal.server.jboss.patch) ;
+  //product.addServerPatch("jbossear",  portal.server.jbossear.patch) ;
   
   /* cleanup duplicated lib */
   product.removeDependency(new Project("commons-httpclient", "commons-httpclient", "jar", "3.0"));

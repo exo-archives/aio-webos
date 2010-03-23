@@ -16,8 +16,7 @@
     You should have received a copy of the GNU General Public License
     along with this program; if not, see <http://www.gnu.org/licenses/>.
 
--->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+--><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.exoplatform</groupId>
@@ -45,7 +44,7 @@
     <org.exoplatform.jcr.version>1.12.0-GA</org.exoplatform.jcr.version>
   	<org.exoplatform.portal.version>3.0.0-GA</org.exoplatform.portal.version>
 	  <exo.product.specification>1.5</exo.product.specification>
-	  <org.exoplatform.exopackage.version>1.2.0</org.exoplatform.exopackage.version>
+	  <org.exoplatform.exopackage.version>1.1.0-Beta05</org.exoplatform.exopackage.version>
     <org.jibx.version>1.2.1</org.jibx.version>
     <org.shindig.version>1.0-r790473-Patch02</org.shindig.version>
     <org.gatein.common.version>2.0.0-GA</org.gatein.common.version>
@@ -163,7 +162,8 @@
   <modules>
     <module>portal</module>
     <module>webosResources</module>
-    <module>packaging</module>
     <module>extension</module>
+    <module>server</module>
+    <module>packaging</module>
   </modules>
 </project>
