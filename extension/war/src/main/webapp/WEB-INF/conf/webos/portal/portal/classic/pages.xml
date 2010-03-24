@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <page-set>
   <page>
-  <!--
   	<page-id>portal::classic::webosPage</page-id>
-  	-->
   	<name>webosPage</name>
   	<title>WebOS Page</title>
   	<owner-type>portal</owner-type>
