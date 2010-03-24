@@ -75,7 +75,7 @@
 								
 								<!--  WebOS specific resources -->
 								<value>
-									<string>webos</string>
+									<string>webos-ext</string>
 								</value>
 								<value>
 									<string>webosResources</string>

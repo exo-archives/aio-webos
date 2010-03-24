@@ -29,7 +29,13 @@ function getModule(params) {
     new Project("org.exoplatform.webos", "exo.webos.web.extension.war", "war", module.version).
     addDependency(new Project("org.exoplatform.webos", "exo.webos.web.extension.jar", "jar", module.version)).
     addDependency(new Project("org.exoplatform.webos", "exo.webos.web.extension.config", "jar", module.version));
-  module.web.extension.war.deployName = "extension";
+  module.web.extension.war.deployName = "webos-ext";
+  
+  module.server = {};
+
+	module.server.tomcat = {}
+	module.server.tomcat.patch =
+	new Project("org.exoplatform.webos", "exo.webos.server.tomcat.patch", "jar", module.version);
 
   return module;
 }
