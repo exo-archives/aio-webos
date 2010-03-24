@@ -1,23 +1,21 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <page-set>
   <page>
-  	<page-id>portal::webos::webosPage</page-id>
-  	<name>webosPage</name>
-  	<title>WebOS Page</title>
   	<owner-type>portal</owner-type>
 	<owner-id>webos</owner-id>
     <name>webosPage</name>		
+  	<title>WebOS Page</title>
     <factory-id>Desktop</factory-id>
 	  <access-permissions>Everyone</access-permissions>
 	  <edit-permission>manager:/platform/administrators</edit-permission>
     <show-max-window>true</show-max-window>
 	 
-	 <!-- 	                 
     <application>
       <instance-id>portal#webos:/exoadmin/AccountPortlet/Account</instance-id>    
       <title>Register</title>
     </application>
     
+    <!--
     <application>
       <instance-id>group#platform/guests:/web/IFramePortlet/blog</instance-id>
       <title>Blog's Link</title>

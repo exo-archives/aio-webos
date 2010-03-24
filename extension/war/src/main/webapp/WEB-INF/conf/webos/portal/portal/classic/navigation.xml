@@ -28,10 +28,10 @@
 
 	<page-nodes>
 		<node>
-			<uri>webosPage</uri>
-			<name>webosPage</name>
-			<label>#{portal.classic.webosPage}</label>
-			<page-reference>portal::classic::webosPage</page-reference>
+			<uri>classicWebosPage</uri>
+			<name>classicWebosPage</name>
+			<label>#{portal.classic.classicWebosPage}</label>
+			<page-reference>portal::classic::classicWebosPage</page-reference>
 		</node>
 	</page-nodes>
 </node-navigation>
