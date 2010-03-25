@@ -9,9 +9,6 @@ UIDesktop.prototype.init = function() {
 	  var uiWindows = eXo.core.DOMUtil.findChildrenByClass(pageDesktop, "div", "UIWindow") ;
 	  for(var i = 0; i < uiWindows.length; i++) {
 	  	if(uiWindows[i].isFirstTime == false)	continue ;
-			//fix display scroll in first time
-//	  	var blockResizes = eXo.core.DOMUtil.findDescendantsByClass(uiWindows[i], "div", "UIResizableBlock");
-//			if (blockResizes.length > 1) blockResizes[0].style.overflow = "hidden" ;
 			eXo.desktop.UIDesktop.backupWindowProperties(uiWindows[i]);
 	  }
 	}
@@ -20,7 +17,7 @@ UIDesktop.prototype.init = function() {
 UIDesktop.prototype.fixDesktop = function() {
   var pageDesktop = document.getElementById("UIPageDesktop") ;
   var browserHeight = eXo.core.Browser.getBrowserHeight() ;
-  if(pageDesktop) pageDesktop.style.height = browserHeight + "px" ;
+  if(pageDesktop) pageDesktop.style.height = browserHeight - eXo.core.Browser.findPosY(pageDesktop) + "px" ;
   window.scroll(0,0);
   setTimeout("eXo.desktop.UIDockbar.resizeDockBar()", 0) ; 
 };
@@ -56,7 +53,6 @@ UIDesktop.prototype.isMaxZIndex = function(object) {
 	var isMax = false ;
 	var DOMUtil = eXo.core.DOMUtil ;
 	var uiPageDesktop = document.getElementById("UIPageDesktop") ;
-	//var uiDockbar = document.getElementById("UIDockBar") ;
 	var desktopApps = DOMUtil.getChildrenByTagName(uiPageDesktop, "div") ;
 	
 	var maxZIndex = parseInt(object.style.zIndex) ;
@@ -99,8 +95,7 @@ UIDesktop.prototype.showHideWindow = function(uiWindow, clickedElement, mode) {
   } else {
 	  if(DOMUtil.getChildrenByTagName(portletFrag, "div").length < 1) {
 	  	var uiPage = eXo.core.DOMUtil.findAncestorByClass(this.object, "UIPage") ;
-			var uiPageIdNode = eXo.core.DOMUtil.findFirstDescendantByClass(uiPage, "div", "id") ;
-			containerBlockId = uiPageIdNode.innerHTML ;
+			containerBlockId = uiPage.id.replace(/^UIPage-/,"") ;
 			var params = [{name : "objectId", value: portletId}] ;
 			ajaxGet(eXo.env.server.createPortalURL(containerBlockId, "ShowPortlet", true, params)) ;
 	  }
@@ -110,18 +105,13 @@ UIDesktop.prototype.showHideWindow = function(uiWindow, clickedElement, mode) {
     eXo.desktop.UIDockbar.resetDesktopShowedStatus(uiPageDesktop, uiDockBar) ;
     eXo.animation.ImplodeExplode.explode(this.object, clickedElement, "UIPageDesktop", numberOfFrame, false) ;
     eXo.desktop.UIWindow.saveWindowProperties(this.object, "SHOW");
-	//	document.getElementById(uiWindow).style.visibility = "visible";
 		this.object.isShowed = true ;
 		if(dockIcon) DOMUtil.addClass(dockIcon, "ShowIcon") ;  
   	//TODO MinhJS: fix bug for don't apply style css in IE6 in first time.
   	if(eXo.core.Browser.isIE6()) {
   		this.object.style.filter =  "" ;
   	}
-		//fix display scroll in first time.
-//		var blockResize = eXo.core.DOMUtil.findFirstDescendantByClass(this.object, "div", "UIResizableBlock");
-//		if (blockResize) blockResize.style.overflow = "hidden" ;
   }
-//  eXo.desktop.UIDockbar.containerMouseOver() ;
 };
 
 UIDesktop.prototype.findPosXInDesktop = function(object, isRTL) {

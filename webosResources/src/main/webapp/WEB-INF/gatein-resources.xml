@@ -27,17 +27,17 @@
 	<portal-skin>
 		<skin-module>WebOSSkin</skin-module>
 		<skin-name>Default</skin-name>
-		<css-path>/webosResources/skin/Defaultskin/Stylesheet.css</css-path>
+		<css-path>/skin/Defaultskin/Stylesheet.css</css-path>
 	</portal-skin>
 	<portal-skin>
 		<skin-module>WebOSSkin</skin-module>
 		<skin-name>Mac</skin-name>
-		<css-path>/webosResources/skin/MacSkin/Stylesheet.css</css-path>
+		<css-path>/skin/MacSkin/Stylesheet.css</css-path>
 	</portal-skin>
 	<portal-skin>
 		<skin-module>WebOSSkin</skin-module>
 		<skin-name>Vista</skin-name>
-		<css-path>/webosResources/skin/VistaSkin/Stylesheet.css</css-path>
+		<css-path>/skin/VistaSkin/Stylesheet.css</css-path>
 	</portal-skin>
     
 	<javascript>

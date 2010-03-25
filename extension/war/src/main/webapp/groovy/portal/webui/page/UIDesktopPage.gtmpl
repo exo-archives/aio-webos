@@ -165,16 +165,12 @@
 
 
 <div class="UIPage" id="UIPage-${uicomponent.id}">
-	<div class="META-DATA-BLOCK" style="display: none">
-		<div class="id">$uicomponent.id</div>
-		<div class="title"><%=_ctx.appRes("UIPage.label.title")%></div>
-		<div class="description"><%=_ctx.appRes("UIPage.label.description")%></div>
-	</div>
 	<div class="VIEW-PAGE">
 		<div id="UIPage">
 			<div class="UIPageDesktop" id="UIPageDesktop">
 				<%int x = 15; y = 15 %>
 				<%for(uiChild in uicomponent.getChildren()) {
+						if((uiChild instanceof org.exoplatform.portal.webui.portal.UIPortalComponent) && !uiChild.hasPermission()) continue;
 						if(!(uiChild instanceof UIPortlet)) {
 							uicomponent.renderUIComponent(uiChild);
 							continue;
@@ -273,7 +269,8 @@
 										String skin = rcontext.getUIApplication().getSkin();
 
 										for(uiChild in uicomponent.getChildren()) {
-											if(!(uiChild instanceof UIPortlet)) continue; 
+											if(!(uiChild instanceof UIPortlet)) continue;
+											if(!uiChild.hasPermission()) continue;
 											String applicationId = uiChild.getApplicationId();
 											String imgLocation = applicationId.substring(0, applicationId.indexOf("/")) + "/skin/DefaultSkin/portletIcons/" + applicationId.substring(applicationId.indexOf("/")+1, applicationId.length());
 											String appStatus = uiChild.getProperties().get("appStatus");

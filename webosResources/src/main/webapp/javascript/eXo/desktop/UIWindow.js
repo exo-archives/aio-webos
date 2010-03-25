@@ -293,8 +293,7 @@ UIWindow.prototype.initDND = function(e) {
 UIWindow.prototype.saveWindowProperties = function(object, appStatus) {
 	var DOMUtil = eXo.core.DOMUtil ;
 	var uiPage = DOMUtil.findAncestorByClass(object, "UIPage") ;
-	var uiPageIdNode = DOMUtil.findFirstDescendantByClass(uiPage, "div", "id") ;
-	containerBlockId = uiPageIdNode.innerHTML ;
+	containerBlockId = uiPage.id.replace(/^UIPage-/,"") ;
 	var uiResizableBlock = DOMUtil.findFirstDescendantByClass(object, "div", "UIResizableBlock") ;
 	
 	var params ;

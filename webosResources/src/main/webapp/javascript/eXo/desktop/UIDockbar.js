@@ -4,6 +4,11 @@ function UIDockbar() {
   this.isFirstTime = true;
   this.showDesktop = false ;
 	this.arrayImage = false ;
+	
+	this.itemStyleClass = "MenuItem" ;
+  this.itemOverStyleClass = "MenuItemOver" ;
+  this.containerStyleClass = "MenuItemContainer" ;
+  this.superClass = eXo.webui.UIPopupMenu ;
 };
 
 UIDockbar.prototype.init = function() {
@@ -274,7 +279,43 @@ UIDockbar.prototype.resetDesktopShowedStatus = function(uiPageDesktop, uiDockBar
 
 UIDockbar.prototype.initNav = function() {
 	var nav = document.getElementById("DockNavigation") ;
-	eXo.portal.UIExoStartMenu.buildMenu(nav) ;
+	this.buildMenu(nav);
+};
+
+UIDockbar.prototype.buildMenu = function(popupMenu) {
+	if(typeof(popupMenu) == "string") popupMenu = document.getElementById(popupMenu) ;
+	
+  var blockMenuItems = eXo.core.DOMUtil.findDescendantsByClass(popupMenu, "div", this.containerStyleClass) ;
+  for (var i = 0; i < blockMenuItems.length; i++) {
+    if (!blockMenuItems[i].id) blockMenuItems[i].id = Math.random().toString() ;
+		blockMenuItems[i].resized = false ;
+  }
+	
+  var menuItems = eXo.core.DOMUtil.findDescendantsByClass(popupMenu, "div", this.itemStyleClass) ;
+  for(var i = 0; i < menuItems.length; i++) {
+		var menuItemContainer = eXo.core.DOMUtil.findFirstChildByClass(menuItems[i], "div", this.containerStyleClass) ;
+		if (menuItemContainer) menuItems[i].menuItemContainer = menuItemContainer ;
+		
+		menuItems[i].onmouseover = this.onMenuItemOver ; 
+		menuItems[i].onmouseout = this.onMenuItemOut ;
+
+    var labelItem = eXo.core.DOMUtil.findFirstDescendantByClass(menuItems[i], "div", "LabelItem") ;
+    var link = eXo.core.DOMUtil.findDescendantsByTagName(labelItem, "a")[0] ;
+    eXo.webui.UIPopupMenu.createLink(menuItems[i], link) ;
+  }
+};
+
+UIDockbar.prototype.onMenuItemOver = function(event) {
+	alert("OnMenuItemOver");
+};
+
+UIDockbar.prototype.onMenuItemOut = function(event) {
+	this.className = eXo.desktop.UIDockbar.itemStyleClass ;
+	if (this.menuItemContainer) {
+    eXo.desktop.UIDockbar.superClass.pushHiddenContainer(this.menuItemContainer.id) ;
+    eXo.desktop.UIDockbar.superClass.popVisibleContainer() ;
+    eXo.desktop.UIDockbar.superClass.setCloseTimeout() ;
+	}
 };
 
 UIDockbar.prototype.showNavigation = function(event) {
@@ -286,7 +327,7 @@ UIDockbar.prototype.showNavigation = function(event) {
 	dockNavigation.style.display = "block" ;
 	var menuItemContainer = eXo.core.DOMUtil.findFirstDescendantByClass(dockNavigation, "div", "MenuItemContainer") ;
 	dockNavigation.menuItemContainer = menuItemContainer ;
-	eXo.portal.UIExoStartMenu.createSlide(dockNavigation) ;
+	eXo.desktop.UIDockbar.createSlide(dockNavigation) ;
 	
 	eXo.core.Mouse.update(event) ;
 
@@ -334,6 +375,92 @@ UIDockbar.prototype.showNavigation = function(event) {
 UIDockbar.prototype.hideNavigation = function(event) {
 	var nav = document.getElementById("DockNavigation") ;
 	nav.style.display = "none" ;
+};
+
+UIDockbar.prototype.createSlide = function(menuItem) {
+	var menuItemContainer = menuItem.menuItemContainer ;
+	var icon = eXo.core.DOMUtil.findFirstDescendantByClass(menuItem, "div", "Icon") ;
+	// fix width for menuContainer, only IE.
+	if (!menuItemContainer.resized) eXo.desktop.UIDockbar.setContainerSize(menuItemContainer);
+	
+ 	var blockMenu = eXo.core.DOMUtil.findFirstDescendantByClass(menuItemContainer, "div", "BlockMenu") ;
+	var parentMenu = blockMenu.parentNode;
+	var topElement = eXo.core.DOMUtil.findFirstChildByClass(parentMenu, "div", "TopNavigator") ;
+ 	var bottomElement = eXo.core.DOMUtil.findFirstChildByClass(parentMenu, "div", "BottomNavigator") ;
+
+	var menuContainer = eXo.core.DOMUtil.findFirstDescendantByClass(blockMenu, "div", "MenuContainer") ;
+	
+	if (!blockMenu.id) blockMenu.id = "eXo" + new Date().getTime() + Math.random().toString().substring(2) ;
+	
+	var browserHeight = eXo.core.Browser.getBrowserHeight() ;
+	if (menuContainer.offsetHeight + 64 > browserHeight) {
+		var curentHeight = browserHeight - 64;
+		blockMenu.style.height = curentHeight + "px" ;
+		blockMenu.style.overflowY = "hidden" ;
+		topElement.style.display = "block" ;
+		bottomElement.style.display = "block" ;
+
+		if(!menuContainer.curentHeight || (menuContainer.curentHeight != curentHeight)) {
+			eXo.desktop.UIDockbar.initSlide(menuContainer, curentHeight) ;
+		}
+		topElement.onmousedown = function(evt) {
+			if(!evt) evt = window.event ;
+      evt.cancelBubble = true;
+			eXo.portal.VerticalScrollManager.scrollComponent(blockMenu.id, true, 15) ;
+		};
+		topElement.onmouseup = function(evt) {
+			if(!evt) evt = window.event ;
+      evt.cancelBubble = true;
+      eXo.portal.VerticalScrollManager.cancelScroll() ;
+		};
+		topElement.onclick = function(event) {
+			event = event || window.event ;
+			event.cancelBubble = true ;
+		};
+		
+		bottomElement.onmousedown = function(evt) {
+			if(!evt) evt = window.event ;
+			evt.cancelBubble = true;
+			eXo.portal.VerticalScrollManager.scrollComponent(blockMenu.id, false, 15) ;
+		};
+		bottomElement.onmouseup = function(evt) {
+			if(!evt) evt = window.event ;
+			evt.cancelBubble = true;
+      eXo.portal.VerticalScrollManager.cancelScroll() ;
+		};			
+		bottomElement.onclick = function(event) {
+			event = event || window.event ;
+			event.cancelBubble = true ;
+		};
+  } else {
+  	blockMenu.scrollTop = 0 ;
+		blockMenu.style.height = menuContainer.offsetHeight + "px" ;
+		blockMenu.style.overflowY = "" ;
+		menuContainer.curentHeight = null;
+		topElement.style.display = "none" ;
+		bottomElement.style.display = "none" ;
+  }
+};
+
+UIDockbar.prototype.setContainerSize = function(menuItemContainer) {
+  var menuCenter = eXo.core.DOMUtil.findFirstDescendantByClass(menuItemContainer, "div", "StartMenuML") ;
+  var menuTop = eXo.core.DOMUtil.findFirstDescendantByClass(menuItemContainer, "div", "StartMenuTL") ;
+  var decorator = eXo.core.DOMUtil.findFirstDescendantByClass(menuTop, "div", "StartMenuTR") ;
+  var menuBottom = menuTop.nextSibling ;
+  while (menuBottom.className != "StartMenuBL") menuBottom = menuBottom.nextSibling ;
+  var w = menuCenter.offsetWidth - decorator.offsetLeft ;
+  if(eXo.core.Browser.isIE7() && eXo.core.I18n.isRT()) {
+  	w = menuCenter.offsetWidth ;
+  }
+  menuTop.style.width = w + "px" ;
+  menuBottom.style.width = w + "px" ;
+  menuCenter.style.width = w + "px" ;
+  menuItemContainer.resized = true ;
+};
+
+UIDockbar.prototype.initSlide = function(menuContainer, clipBottom) {
+	menuContainer.curentHeight = clipBottom ;
+	menuContainer.style.top = 0 + "px" ;
 };
 
 eXo.desktop.UIDockbar = new UIDockbar() ;

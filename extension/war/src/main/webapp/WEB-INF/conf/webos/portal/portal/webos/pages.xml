@@ -13,6 +13,7 @@
     <application>
       <instance-id>portal#webos:/exoadmin/AccountPortlet/Account</instance-id>    
       <title>Register</title>
+      <access-permissions>Everyone</access-permissions>
     </application>
     
     <!--
