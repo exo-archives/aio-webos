@@ -8,6 +8,10 @@ function UIDockbar() {
 	this.itemStyleClass = "MenuItem" ;
   this.itemOverStyleClass = "MenuItemOver" ;
   this.containerStyleClass = "MenuItemContainer" ;
+  
+  //TODO: tan.pham: Require by JS. will remove when webos using Gatein 3.0.1 with perfect javascriptService
+  eXo.core.Loader.register('eXo.webui.UIPopupMenu', '/eXoResources/javascript/eXo/webui/UIPopupMenu.js');
+  eXo.core.Loader.init("eXo.webui.UIPopupMenu");
   this.superClass = eXo.webui.UIPopupMenu ;
 };
 
@@ -306,7 +310,43 @@ UIDockbar.prototype.buildMenu = function(popupMenu) {
 };
 
 UIDockbar.prototype.onMenuItemOver = function(event) {
-	alert("OnMenuItemOver");
+	this.className = eXo.desktop.UIDockbar.itemOverStyleClass ;
+	if (this.menuItemContainer) {
+		var menuItemContainer = this.menuItemContainer ;
+		menuItemContainer.style.display = "block" ;
+		menuItemContainer.style.visibility = "" ;
+		var x = this.offsetWidth ;
+		var posRight = eXo.core.Browser.getBrowserWidth() - eXo.core.Browser.findPosX(this) - this.offsetWidth ; 
+	  var rootX = (eXo.core.I18n.isLT() ? eXo.core.Browser.findPosX(this) : posRight) ;
+		if (x + menuItemContainer.offsetWidth + rootX > eXo.core.Browser.getBrowserWidth()) {
+    	x -= (menuItemContainer.offsetWidth + this.offsetWidth) ;
+	  }
+	  
+	  //padWidth is used for improvement PORTAL-2827
+	 	if(eXo.core.I18n.isLT()) {
+		  var padWidth = eXo.core.Browser.findPosX(this) - eXo.core.Browser.findPosX(menuItemContainer.offsetParent) ;
+	 		menuItemContainer.style.left = x + padWidth + "px" ;
+	 	}	else {
+	 		var padWidth = (eXo.core.Browser.findPosX(menuItemContainer.offsetParent) + menuItemContainer.offsetParent.offsetWidth) 
+	 		    - (eXo.core.Browser.findPosX(this) + this.offsetWidth) ;
+	 		menuItemContainer.style.right = x + padWidth + "px" ;
+	 	}
+		eXo.desktop.UIDockbar.createSlide(this);
+    eXo.desktop.UIDockbar.superClass.pushVisibleContainer(this.menuItemContainer.id) ;
+    
+    var y ;
+	 	var browserHeight = eXo.core.Browser.getBrowserHeight() ;
+	 	
+		var parentMenu = eXo.core.DOMUtil.findAncestorByClass(this, "MenuItemContainer") ;
+		var blockMenu = eXo.core.DOMUtil.findAncestorByClass(this, "BlockMenu") ;
+ 		var objTop = eXo.core.Browser.findPosY(this) ;
+ 		y = objTop - eXo.core.Browser.findPosY(parentMenu) - blockMenu.scrollTop ;
+ 		if(y + menuItemContainer.offsetHeight + 15 > browserHeight) {
+ 			y += (this.offsetHeight - menuItemContainer.offsetHeight) ;
+ 			if(y <= 0) y = 1 ;
+ 		}
+		menuItemContainer.style.top = y + "px" ;
+	}
 };
 
 UIDockbar.prototype.onMenuItemOut = function(event) {
