@@ -16,7 +16,8 @@
     You should have received a copy of the GNU General Public License
     along with this program; if not, see <http://www.gnu.org/licenses/>.
 
---><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.exoplatform</groupId>
@@ -25,7 +26,7 @@
   </parent>
   <groupId>org.exoplatform.webos</groupId>
   <artifactId>webos-parent</artifactId>
-  <version>1.6-SNAPSHOT</version>
+  <version>2.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>eXo WebOS</name>
   <scm>
@@ -42,9 +43,9 @@
     <org.exoplatform.core.version>2.3.1-CR1</org.exoplatform.core.version>
     <org.exoplatform.ws.version>2.1.1-CR1</org.exoplatform.ws.version>
     <org.exoplatform.jcr.version>1.12.1-CR1</org.exoplatform.jcr.version>
-  	<org.exoplatform.portal.version>3.0.1-GA-SNAPSHOT</org.exoplatform.portal.version>
-	  <exo.product.specification>1.5</exo.product.specification>
-	  <org.exoplatform.exopackage.version>1.1.0-Beta05</org.exoplatform.exopackage.version>
+    <org.exoplatform.portal.version>3.0.1-GA-SNAPSHOT</org.exoplatform.portal.version>
+    <exo.product.specification>1.5</exo.product.specification>
+    <org.exoplatform.exopackage.version>1.1.0-Beta05</org.exoplatform.exopackage.version>
     <org.jibx.version>1.2.1</org.jibx.version>
     <org.shindig.version>1.0-r790473-Patch02</org.shindig.version>
     <org.gatein.common.version>2.0.0-GA</org.gatein.common.version>
@@ -60,14 +61,12 @@
     <version.chromattic>1.0.1-cr1</version.chromattic>
     <version.reflect>1.0.0</version.reflect>
     <jcip.version>1.0</jcip.version>
-
     <!-- ************** -->
     <!-- Build settings -->
     <!-- ************** -->
-
     <!-- maven-enforcer-plugin -->
     <jdk.min.version>1.6</jdk.min.version>
- </properties>
+  </properties>
   <build>
     <resources>
       <resource>
