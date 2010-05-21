@@ -22,7 +22,7 @@
   <parent>
     <groupId>org.exoplatform.webos</groupId>
     <artifactId>webos-parent</artifactId>
-    <version>1.5.6</version>
+    <version>1.5.7-SNAPSHOT</version>
   </parent>
   <artifactId>exo.webos.web.webosResources</artifactId>
   <packaging>war</packaging>
