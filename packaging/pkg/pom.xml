@@ -22,7 +22,7 @@
   <parent>
     <groupId>org.exoplatform.webos</groupId>
     <artifactId>exo.webos.packaging</artifactId>
-    <version>1.5.6-SNAPSHOT</version>
+    <version>1.5.6</version>
   </parent>
   <artifactId>exo.webos.packaging.assembly</artifactId>
   <packaging>pom</packaging>
@@ -77,13 +77,13 @@
     <dependency>
       <groupId>org.exoplatform.webos</groupId>
       <artifactId>webos.packaging.module</artifactId>
-      <version>1.5.6-SNAPSHOT</version>
+      <version>1.5.6</version>
       <type>js</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.webos</groupId>
       <artifactId>webos.packaging.product</artifactId>
-      <version>1.5.6-SNAPSHOT</version>
+      <version>1.5.6</version>
       <type>js</type>
     </dependency>
   </dependencies>
