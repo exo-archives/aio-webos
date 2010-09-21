@@ -31,4 +31,25 @@
   <name>GateIn WebOS Extension Java Classes</name>
   <description>GateIn WebOS Extension Java Classes</description>
   <url>http://www.exoplatform.org</url>
+  
+  <dependencies>
+  	<dependency>
+  	  <groupId>org.exoplatform.portal</groupId>
+  	  <artifactId>exo.portal.component.web</artifactId>
+  	  <version>${org.exoplatform.portal.version}</version>
+  	</dependency>
+  	
+  	<dependency>
+  	  <groupId>org.exoplatform.portal</groupId>
+  	  <artifactId>exo.portal.component.common</artifactId>
+  	  <version>${org.exoplatform.portal.version}</version>
+  	</dependency>
+	
+	<dependency>
+	  <groupId>org.chromattic</groupId>
+	  <artifactId>chromattic.ext</artifactId>
+	  <version>${version.chromattic}</version>
+	</dependency>
+	
+  </dependencies>
 </project>
