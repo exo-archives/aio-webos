@@ -55,7 +55,7 @@
       </propertyDefinitions> 
       
       <childNodeDefinitions>
-         <childNodeDefinition name="background:personalBackgroundFolder" defaultPrimaryType="" autoCreated="false" mandatory="false"
+         <childNodeDefinition name="webos:personalBackgroundFolder" defaultPrimaryType="" autoCreated="false" mandatory="false"
                               onParentVersion="COPY" protected="false" sameNameSiblings="false">
             <requiredPrimaryTypes>
             	<requiredPrimaryType>nt:folder</requiredPrimaryType>
