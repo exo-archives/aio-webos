@@ -5,7 +5,7 @@
 	<owner-id>classic</owner-id>
     <name>classicWebosPage</name>		
   	<title>WebOS Page</title>
-    <factory-id>Desktop</factory-id>
+    <factory-id>org.exoplatform.webos.webui.page.UIDesktopPage</factory-id>
 	  <access-permissions>Everyone</access-permissions>
 	  <edit-permission>manager:/platform/administrators</edit-permission>
     <show-max-window>true</show-max-window>

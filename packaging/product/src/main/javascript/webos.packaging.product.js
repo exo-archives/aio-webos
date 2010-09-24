@@ -28,7 +28,8 @@ function getProduct(version) {
   
 	product.addDependencies(portal.web.eXoResources);
 	product.addDependencies(webos.web.webosResources);
-	product.addDependencies(portal.web.portal) ;
+	product.addDependencies(webos.webui.webos);
+        product.addDependencies(portal.web.portal) ;
  
   portal.starter = new Project("org.exoplatform.portal", "exo.portal.starter.war", "war", portal.version);
   portal.starter.deployName = "starter";

@@ -160,6 +160,8 @@
   </build>
   <modules>
     <module>webosResources</module>
+    <module>webui/webos</module>
+    <module>webosPortlets</module>
     <module>extension</module>
     <module>server</module>
     <module>packaging</module>
