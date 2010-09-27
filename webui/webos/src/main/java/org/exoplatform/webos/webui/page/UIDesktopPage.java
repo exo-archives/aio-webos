@@ -23,7 +23,6 @@ import org.exoplatform.portal.config.DataStorage;
 import org.exoplatform.portal.config.model.ModelObject;
 import org.exoplatform.portal.config.model.Page;
 import org.exoplatform.portal.config.model.PageNavigation;
-import org.exoplatform.portal.webui.application.UIAddNewApplication;
 import org.exoplatform.portal.webui.application.UIApplication;
 import org.exoplatform.portal.webui.application.UIGadget;
 import org.exoplatform.portal.webui.application.UIPortlet;
