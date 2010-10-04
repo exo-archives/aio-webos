@@ -18,6 +18,12 @@
  */
 package org.exoplatform.webos.services.desktop.impl;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.net.URL;
+
+import org.chromattic.api.annotations.Create;
 import org.chromattic.api.annotations.FormattedBy;
 import org.chromattic.api.annotations.MappedBy;
 import org.chromattic.api.annotations.Name;
@@ -25,7 +31,9 @@ import org.chromattic.api.annotations.OneToOne;
 import org.chromattic.api.annotations.Owner;
 import org.chromattic.api.annotations.PrimaryType;
 import org.chromattic.api.annotations.Property;
+import org.chromattic.common.IO;
 import org.chromattic.ext.ntdef.NTFolder;
+import org.chromattic.ext.ntdef.Resource;
 
 /**
  * @author <a href="mailto:hoang281283@gmail.com">Minh Hoang TO</a>
@@ -40,15 +48,18 @@ public abstract class PersonalBackgroundSpace
    @Name
    public abstract String getName();
    
-   @Property(name = "gtn:name")
+   @Property(name = "webos:title")
    public abstract String getTitle();
    
    public abstract void setTitle(String title);
    
-   @Property(name = "webos:currentBackground", defaultValue = "default")
+   @Property(name = "webos:currentBackground")
    public abstract String getCurrentBackground();
    
    public abstract void setCurrentBackground(String currentBackground);
+   
+   @Create
+   public abstract NTFolder createBackgroundImageFolder();
    
    @OneToOne
    @Owner
@@ -56,4 +67,33 @@ public abstract class PersonalBackgroundSpace
    public abstract NTFolder getBackgroundImageFolder();
    
    public abstract void setBackgroundImageFolder(NTFolder backgroundImageFolder);
+   
+   public boolean uploadBackgroundImage(String imageName, String mimeType, String encoding, InputStream binaryStream)
+   {
+	   try{
+		   NTFolder imageFolder = getBackgroundImageFolder();
+		   byte[] content = IO.getBytes(binaryStream);
+		   imageFolder.createFile(imageName, new Resource(mimeType, encoding, content));
+		   binaryStream.close();
+		   return true;
+	   }catch(Exception ex)
+	   {
+		   ex.printStackTrace();
+		   return false;
+	   }
+   }
+      
+   protected void uploadDefaultBackgroundImage()
+   {
+		for (int i = 0; i < 8; i++) {
+			try {
+				uploadBackgroundImage("background_" + i, "image/jpeg", "UTF-8",
+						Thread.currentThread().getContextClassLoader()
+								.getResourceAsStream(
+										"backgrounds/" + i + ".jpg"));
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			}
+		}
+   }
 }

@@ -45,10 +45,14 @@
    	  <supertypes>
    	     <supertype>nt:base</supertype>
    	     <supertype>mix:referenceable</supertype>
-   	     <supertype>gtn:described</supertype>
    	  </supertypes>
  	  <propertyDefinitions>
          <propertyDefinition name="webos:currentBackground" requiredType="String" autoCreated="false" mandatory="false"
+                             onParentVersion="COPY" protected="false" multiple="false">
+            <valueConstraints/>
+         </propertyDefinition>
+         
+         <propertyDefinition name="webos:title" requiredType="String" autoCreated="false" mandatory="false"
                              onParentVersion="COPY" protected="false" multiple="false">
             <valueConstraints/>
          </propertyDefinition>

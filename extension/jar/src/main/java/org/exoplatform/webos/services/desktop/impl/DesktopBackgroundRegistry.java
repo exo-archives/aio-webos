@@ -24,6 +24,7 @@ import org.chromattic.api.annotations.Create;
 import org.chromattic.api.annotations.FormattedBy;
 import org.chromattic.api.annotations.OneToMany;
 import org.chromattic.api.annotations.PrimaryType;
+import org.chromattic.ext.ntdef.NTFolder;
 
 /**
  * @author <a href="mailto:hoang281283@gmail.com">Minh Hoang TO</a>
@@ -46,13 +47,24 @@ public abstract class DesktopBackgroundRegistry
       return getPersonalBackgroundSpaces().get(title);
    }
    
+   public PersonalBackgroundSpace getPersonalBackgroundSpace(String title, boolean autoCreated)
+   {
+	   PersonalBackgroundSpace space = getPersonalBackgroundSpaces().get(title);
+	   if(space == null && autoCreated)
+	   {
+		   space = addPersonalBackgroundSpace(title);
+		   NTFolder folder = space.createBackgroundImageFolder();
+		   space.setBackgroundImageFolder(folder);
+		   space.uploadDefaultBackgroundImage();
+	   }
+	   
+	   return space;
+   }
+   
    public PersonalBackgroundSpace addPersonalBackgroundSpace(String title)
    {
       PersonalBackgroundSpace space = createPersonalBackgroundSpace();
-      space.setTitle(title);
-      
       getPersonalBackgroundSpaces().put(title, space);
-      
       return space;
    }
    

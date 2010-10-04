@@ -19,6 +19,7 @@
 
 package org.exoplatform.webos.webui.page;
 
+import org.exoplatform.portal.application.PortalRequestContext;
 import org.exoplatform.portal.config.DataStorage;
 import org.exoplatform.portal.config.model.ModelObject;
 import org.exoplatform.portal.config.model.Page;
@@ -39,6 +40,8 @@ import org.exoplatform.portal.webui.util.PortalDataMapper;
 import org.exoplatform.portal.webui.util.Util;
 import org.exoplatform.portal.webui.workspace.UIMaskWorkspace;
 import org.exoplatform.portal.webui.workspace.UIPortalApplication;
+import org.exoplatform.webos.services.desktop.DesktopBackgroundService;
+import org.exoplatform.webui.application.WebuiRequestContext;
 import org.exoplatform.webui.config.annotation.ComponentConfig;
 import org.exoplatform.webui.config.annotation.EventConfig;
 import org.exoplatform.webui.core.UIComponent;
@@ -233,5 +236,24 @@ public class UIDesktopPage extends UIPage
          event.getRequestContext().addUIComponentToUpdateByAjax(uiPortlet);
       }
    }
-
+   
+   public void showEditBackgroundPopup(WebuiRequestContext context) throws Exception
+   {
+      PortalRequestContext pContext = (PortalRequestContext)context;
+      
+      UIPortalApplication uiPortalApp = (UIPortalApplication)pContext.getUIApplication();
+      UIMaskWorkspace maskWorkspace = uiPortalApp.findComponentById(UIPortalApplication.UI_MASK_WS_ID);
+      
+      maskWorkspace.createUIComponent(UIBackgroundSelector.class, "backgroundSelector", "backgroundSelector");
+      
+      pContext.addUIComponentToUpdateByAjax(maskWorkspace);
+   }
+   
+   public String getSelectedBackground(WebuiRequestContext context)
+   {
+	   String userName = context.getRemoteUser();
+	   DesktopBackgroundService service = (DesktopBackgroundService)getApplicationComponent(DesktopBackgroundService.class);
+	   return service.getCurrentBackgroundImageURL(userName);
+   }
+   
 }

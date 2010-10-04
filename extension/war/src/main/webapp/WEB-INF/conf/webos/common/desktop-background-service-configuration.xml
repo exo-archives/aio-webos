@@ -22,10 +22,10 @@
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.exoplaform.org/xml/ns/kernel_1_0.xsd http://www.exoplaform.org/xml/ns/kernel_1_0.xsd" xmlns="http://www.exoplaform.org/xml/ns/kernel_1_0.xsd">
 
   <component>
-    <key>org.exoplatform.webos.services.desktop.DesktopBackgroundService</key>
-    <type>org.exoplatform.webos.services.desktop.DesktopBackgroundServiceImpl</type>
+     <key>org.exoplatform.webos.services.desktop.DesktopBackgroundService</key>
+     <type>org.exoplatform.webos.services.desktop.impl.DesktopBackgroundServiceImpl</type>
   </component>
-
+  
   <external-component-plugins>
     <target-component>org.exoplatform.commons.chromattic.ChromatticManager</target-component>
     <component-plugin>
@@ -52,5 +52,4 @@
       </init-params>
     </component-plugin>
   </external-component-plugins>
-
 </configuration>

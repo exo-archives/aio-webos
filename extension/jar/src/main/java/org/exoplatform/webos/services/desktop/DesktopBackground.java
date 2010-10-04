@@ -18,24 +18,31 @@
  */
 package org.exoplatform.webos.services.desktop;
 
-import java.io.InputStream;
-import java.util.List;
-
 /**
  * @author <a href="mailto:hoang281283@gmail.com">Minh Hoang TO</a>
- * Sep 14, 2010
+ * Oct 1, 2010
  */
 
-public interface DesktopBackgroundService
+public class DesktopBackground
 {
 
-   public boolean uploadBackgroundImage(String userName, String backgroundImageName, String mimeType, String encoding, InputStream binaryStream);
+   private final String imageURL;
    
-   public boolean removeBackgroundImage(String userName, String backgroundImageName); 
+   private String imageLabel;
    
-   public String getCurrentBackgroundImageURL(String userName);
+   public DesktopBackground(String _imageURL, String _imageLabel)
+   {
+      this.imageURL = _imageURL;
+      this.imageLabel = _imageLabel;
+   }
    
-   public List<DesktopBackground> getUserDesktopBackgrounds(String userName);
+   public String getImageURL()
+   {
+      return imageURL;
+   }
    
-   public void setSelectedBackgroundImage(String userName, String imageName);
+   public String getImageLabel()
+   {
+      return imageLabel;
+   }
 }

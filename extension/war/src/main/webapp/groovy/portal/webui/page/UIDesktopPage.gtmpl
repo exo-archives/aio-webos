@@ -16,6 +16,7 @@
 	jsmanager.addCustomizedOnLoadScript("eXo.gadget.UIGadget.Debug='" + _ctx.appRes("UIDashboardContainer.label.Debug") + "';");
 	jsmanager.addCustomizedOnLoadScript('eXo.desktop.UIDockbar.initNav();');
 	
+	String currentSelectedBackground = uicomponent.getSelectedBackground(rcontext);
 	String docBase =	rcontext.getRequestContextPath();
 	String comId = uicomponent.getId();
 	boolean modifiable = uicomponent.isModifiable();
@@ -167,7 +168,12 @@
 <div class="UIPage" id="UIPage-${uicomponent.id}">
 	<div class="VIEW-PAGE">
 		<div id="UIPage">
-			<div class="UIPageDesktop" id="UIPageDesktop">
+		   <% if(currentSelectedBackground == null) { %>
+		    <div class="UIPageDesktop" id="UIPageDesktop" >
+		   <% }else{ %> 
+			<div class="UIPageDesktop" id="UIPageDesktop" style="background:url('${currentSelectedBackground}') no-repeat left bottom ;">
+			<% } %>
+			
 				<%int x = 15; y = 15 %>
 				<%for(uiChild in uicomponent.getChildren()) {
 						if((uiChild instanceof org.exoplatform.portal.webui.portal.UIPortalComponent) && !uiChild.hasPermission()) continue;
