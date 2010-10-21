@@ -1,0 +1,22 @@
+Index: webosResources/src/main/webapp/javascript/eXo/animation/ImplodeExplode.js
+===================================================================
+--- webosResources/src/main/webapp/javascript/eXo/animation/ImplodeExplode.js	(revision 61407)
++++ webosResources/src/main/webapp/javascript/eXo/animation/ImplodeExplode.js	(working copy)
+@@ -19,7 +19,7 @@
+ 		this.object.animation.style.background = "#ffffff" ;
+ 		this.object.animation.style.position = "absolute" ;	
+ 		eXo.core.Browser.setOpacity(this.object.animation, 50) ;
+-		this.object.animation.style.zIndex = this.object.maxIndex ;
++		this.object.animation.style.zIndex = this.object.style.zIndex ;
+ 	}
+ } ;
+ 
+@@ -44,7 +44,7 @@
+ 		this.object.animation.style.background = "white" ;
+ 		this.object.animation.style.position = "absolute" ;
+ 		eXo.core.Browser.setOpacity(this.object.animation, 40) ;
+-		this.object.animation.style.zIndex = this.object.maxIndex ;
++		this.object.animation.style.zIndex = this.object.style.zIndex ;
+ 	}
+ 	uiWindow = this.object;
+ } ;
