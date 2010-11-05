@@ -69,9 +69,9 @@
 										
 												<%
 													 for(application in listApplication) {
-													 		 String srcBG = application.getApplicationGroup() + "/skin/DefaultSkin/portletIcons/" + application.getApplicationName()+ ".png";
+													 		 //String srcBG = application.getApplicationGroup() + "/skin/DefaultSkin/portletIcons/" + application.getApplicationName()+ ".png";
 															 String srcNormalBG = "/eXoResources/skin/sharedImages/Icon80x80/DefaultPortlet.png";
-
+															 String srcBG = srcNormalBG;
 															 //Create add Application Ajax request URL
 															 String callingAction = "AddApplication";
 															 String addApplicationURL = uicomponent.event(callingAction, application.getId());
@@ -86,7 +86,7 @@
 															<div class="TitleBarApplication">
 																 <div class="Title"><%= application.getDisplayName() %></div>
 																 <div class="ApplicationButton">
-																		<% if (org.exoplatform.web.application.Application.EXO_PORTLET_TYPE.equals(application.getApplicationType())) { %>
+																		<% if (org.exoplatform.web.application.Application.EXO_PORTLET_TYPE.equals(application.getType().getName())) { %>
 																			<div title="<%=_ctx.appRes("UIAddNewApplication.label.AddToStartup")%>" class="AddToStartUp" onclick="$addToStartup" ><span></span></div>
 																		<%}%>
 																		<div title="<%=_ctx.appRes("UIAddNewApplication.label.Add")%>" class="AddButton" onclick="$addApplicationURL" ><span></span></div>
@@ -95,7 +95,7 @@
 															<div class="ApplicationContentLabel">
 																<div class="ContentLabel">
 																		<span class="LeftLabel"><%=_ctx.appRes("UIAddNewApplication.label.Type")%></span>
-																		<span class="RightLabel"><%=application.getApplicationType()%></span>
+																		<span class="RightLabel"><%=application.getType().getName();%></span>
 																</div>
 																<div class="ContentLabel">
 																		<span class="LeftLabel"><%=_ctx.appRes("UIAddNewApplication.label.Created")%></span>

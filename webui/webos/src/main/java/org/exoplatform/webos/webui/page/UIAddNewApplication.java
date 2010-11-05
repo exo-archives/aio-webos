@@ -30,6 +30,7 @@ import org.exoplatform.container.ExoContainer;
 import org.exoplatform.container.ExoContainerContext;
 import org.exoplatform.portal.application.PortalRequestContext;
 import org.exoplatform.portal.config.DataStorage;
+import org.exoplatform.portal.config.model.ApplicationState;
 import org.exoplatform.portal.config.model.ApplicationType;
 import org.exoplatform.portal.config.model.CloneApplicationState;
 import org.exoplatform.portal.config.model.ModelObject;
@@ -205,16 +206,11 @@ public class UIAddNewApplication extends UIContainer
 
          UIPortlet uiPortlet = uiPage.createUIComponent(UIPortlet.class, null, null);
 
-         CloneApplicationState appState;
+         ApplicationState appState;
          Object appId;
-         if (!remote)
-         {
-            appState = new CloneApplicationState<Portlet>(application.getId());
-         }
-         else
-         {
-            appState = new CloneApplicationState<WSRPState>(application.getId());
-         }
+         
+         //TODO: Check if there 's already a portlet window of this portlet
+         appState = new TransientApplicationState<UIPortlet>(application.getId());
 
          ApplicationType applicationType = remote ? ApplicationType.WSRP_PORTLET : ApplicationType.PORTLET;
          PortletState portletState = new PortletState(appState, applicationType);
@@ -250,7 +246,6 @@ public class UIAddNewApplication extends UIContainer
       // Add component to page
       uiPage.addChild(component);
 
-      // Save all changes
       if (uiPage.isModifiable())
       {
          Page page = (Page)PortalDataMapper.buildModelObject(uiPage);
@@ -260,6 +255,11 @@ public class UIAddNewApplication extends UIContainer
          }
          DataStorage dataService = uiPortalApp.getApplicationComponent(DataStorage.class);
          dataService.save(page);
+         
+         //Rebuild the uiPage
+         page = dataService.getPage(page.getPageId());
+         uiPage.getChildren().clear();
+         PortalDataMapper.toUIPage(uiPage, page);
       }
 
       PortalRequestContext pcontext = Util.getPortalRequestContext();
