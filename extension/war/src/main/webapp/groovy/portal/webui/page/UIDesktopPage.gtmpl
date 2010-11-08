@@ -270,10 +270,8 @@
 										String skin = rcontext.getUIApplication().getSkin();
 
 										for(uiChild in uicomponent.getChildren()) {
-											if(!(uiChild instanceof UIPortlet)) continue;
-											if(!uiChild.hasPermission()) continue;
-											String applicationId = uiChild.getApplicationId();
-											String imgLocation = applicationId.substring(0, applicationId.indexOf("/")) + "/skin/DefaultSkin/portletIcons/" + applicationId.substring(applicationId.indexOf("/")+1, applicationId.length());
+											if(!(uiChild instanceof UIPortlet) || (!uiChild.hasPermission())) continue;
+											String imgLocation = uicomponent.getApplicationIconImageLocation(uiChild);
 											String appStatus = uiChild.getProperties().get("appStatus");
 											boolean isVisible = "SHOW".equals(appStatus) || "HIDE".equals(appStatus);
 											
@@ -289,11 +287,11 @@
 									<img class="Separator" alt="" src="/webosResources/skin/Defaultskin/portal/webui/component/view/UIPageDesktop/background/Separator2x1.png" />
 									<img id="PortletsViewer" class="Icon" src="/eXoResources/skin/sharedImages/Icon80x80/ShowPortletsViewer.png" alt="" title=""/><span class="Tooltip" style="display: none;"><%=_ctx.appRes("UIPageDesktop.title.ShowPortletDesktop")%></span>
 									<img id="GadgetsViewer" class="Icon" src="/eXoResources/skin/sharedImages/Icon80x80/HideWidgetsViewer.png" alt="" title=""/><span class="Tooltip" style="display: none;"><%=_ctx.appRes("UIPageDesktop.title.ShowWidgetDesktop")%></span>
-									<%if(modifiable) {%>
-											<img class="Icon" src="/eXoResources/skin/sharedImages/Icon80x80/AddPortlet.png" alt="" title=""
-													 id="UIAddApplicationIcon"
-													 onclick="<%=uicomponent.event("ShowAddNewApplication")%>"/><span class="Tooltip" style="display: none"><%=_ctx.appRes("UIPageDesktop.title.AddApplication")%></span>
-									<%}%>
+									
+									<img class="Separator" alt="" src="/webosResources/skin/Defaultskin/portal/webui/component/view/UIPageDesktop/background/Separator2x1.png" />
+									<img class="Icon" src="/eXoResources/skin/sharedImages/Icon80x80/AddPortlet.png" alt="" title="" id="UIAddApplicationIcon"
+									 onclick="<%=uicomponent.event("ShowAddNewApplication")%>"/><span class="Tooltip" style="display: none"><%=_ctx.appRes("UIPageDesktop.title.AddApplication")%></span>
+									
 								</div>
 							</div>
 						</div>

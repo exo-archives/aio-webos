@@ -162,6 +162,7 @@ public class UIAddNewApplication extends UIContainer
     */
    private static void addApplicationToPage(Event<UIAddNewApplication> event, boolean atStartup) throws Exception
    {
+  	  //TODO: Refactor this bullshit
       UIPortal uiPortal = Util.getUIPortal();
 
       UIPortalApplication uiPortalApp = uiPortal.getAncestorOfType(UIPortalApplication.class);
@@ -180,71 +181,39 @@ public class UIAddNewApplication extends UIContainer
 
       Application application = event.getSource().getApplication(applicationId);
       ApplicationType appType = application.getType();
+      
+      UIPortlet uiPortlet = uiPage.createUIComponent(UIPortlet.class, null, null);
+
+      ApplicationState appState;
+
+      // TODO: Check if there 's already a portlet window of this portlet. A CloneApplicationState
+      // should be created in such case
+      appState = new TransientApplicationState<Object>(application.getContentId());
+
+      uiPortlet.setState(new PortletState(appState, appType));
+      uiPortlet.setPortletInPortal(false);
+
+      if (atStartup) {
+      	uiPortlet.getProperties().setProperty("appStatus", "HIDE");
+      }
+
       String portletName = application.getApplicationName();
-//      String appGroup = application.getApplicationGroup();
+  		String displayName = application.getDisplayName();
+			if (displayName != null) {
+				uiPortlet.setTitle(displayName);
+			} 
+			else if (portletName != null) {
+				uiPortlet.setTitle(portletName);
+			}
+			uiPortlet.setDescription(application.getDescription());
+			List<String> accessPers = application.getAccessPermissions();
+			String[] accessPermissions = accessPers.toArray(new String[accessPers
+					.size()]);
+			uiPortlet.setAccessPermissions(accessPermissions);
+      
 
-      // TODO review windowId for eXoWidget and eXoApplication
-      UIComponent component = null;
-      if (ApplicationType.GADGET.equals(appType))
-      {
-         UIGadget uiGadget = uiPage.createUIComponent(event.getRequestContext(), UIGadget.class, null, null);
-
-         uiGadget.setState(new TransientApplicationState<Gadget>(portletName));
-
-         // Set Properties For gadget
-         int posX = (int)(Math.random() * 400);
-         int posY = (int)(Math.random() * 200);
-
-         uiGadget.getProperties().put(UIApplication.locationX, String.valueOf(posX));
-         uiGadget.getProperties().put(UIApplication.locationY, String.valueOf(posY));
-
-         component = uiGadget;
-      }
-      else
-      {
-         boolean remote = ApplicationType.WSRP_PORTLET.equals(appType);
-
-         UIPortlet uiPortlet = uiPage.createUIComponent(UIPortlet.class, null, null);
-
-         ApplicationState appState;
-         Object appId;
-         
-         //TODO: Check if there 's already a portlet window of this portlet
-         appState = new TransientApplicationState<UIPortlet>(application.getId());
-
-         ApplicationType applicationType = remote ? ApplicationType.WSRP_PORTLET : ApplicationType.PORTLET;
-         PortletState portletState = new PortletState(appState, applicationType);
-
-         uiPortlet.setState(portletState);
-         uiPortlet.setPortletInPortal(false);
-
-         if (atStartup)
-         {
-            uiPortlet.getProperties().setProperty("appStatus", "HIDE");
-         }
-
-         if (application != null)
-         {
-            String displayName = application.getDisplayName();
-            if (displayName != null)
-            {
-               uiPortlet.setTitle(displayName);
-            }
-            else if (portletName != null)
-            {
-               uiPortlet.setTitle(portletName);
-            }
-            uiPortlet.setDescription(application.getDescription());
-            List<String> accessPers = application.getAccessPermissions();
-            String[] accessPermissions = accessPers.toArray(new String[accessPers.size()]);
-            uiPortlet.setAccessPermissions(accessPermissions);
-
-            component = uiPortlet;
-         }
-      }
-
-      // Add component to page
-      uiPage.addChild(component);
+      // Add portlet to page
+      uiPage.addChild(uiPortlet);
 
       if (uiPage.isModifiable())
       {
@@ -265,7 +234,6 @@ public class UIAddNewApplication extends UIContainer
       PortalRequestContext pcontext = Util.getPortalRequestContext();
       UIWorkingWorkspace uiWorkingWS = uiPortalApp.getChildById(UIPortalApplication.UI_WORKING_WS_ID);
       pcontext.addUIComponentToUpdateByAjax(uiWorkingWS);
-      pcontext.setFullRender(true);
    }
 
    static public class AddApplicationActionListener extends EventListener<UIAddNewApplication>

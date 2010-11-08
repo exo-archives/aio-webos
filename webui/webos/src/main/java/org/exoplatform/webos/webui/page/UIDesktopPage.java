@@ -256,4 +256,22 @@ public class UIDesktopPage extends UIPage
 	   return service.getCurrentBackgroundImageURL(userName);
    }
    
+   private String getApplicationIconImageLocation(UIPortlet window)
+   {
+  	String applicationId = window.getApplicationId();
+  	 
+		if (applicationId.indexOf("/") >= 0) {
+			String imgLocation = applicationId.substring(0, applicationId
+					.indexOf("/"))
+					+ "/skin/DefaultSkin/portletIcons/"
+					+ applicationId.substring(applicationId.indexOf("/") + 1,
+							applicationId.length());
+			return imgLocation;
+		}
+		else{
+			//Currently hardcode
+			return "";
+		}
+   }
+   
 }
