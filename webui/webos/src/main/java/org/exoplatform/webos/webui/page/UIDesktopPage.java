@@ -41,6 +41,8 @@ import org.exoplatform.portal.webui.util.Util;
 import org.exoplatform.portal.webui.workspace.UIMaskWorkspace;
 import org.exoplatform.portal.webui.workspace.UIPortalApplication;
 import org.exoplatform.webos.services.desktop.DesktopBackgroundService;
+import org.exoplatform.webos.services.dockbar.DockbarIcon;
+import org.exoplatform.webos.services.dockbar.DockbarService;
 import org.exoplatform.webui.application.WebuiRequestContext;
 import org.exoplatform.webui.config.annotation.ComponentConfig;
 import org.exoplatform.webui.config.annotation.EventConfig;
@@ -272,6 +274,22 @@ public class UIDesktopPage extends UIPage
 			//Currently hardcode
 			return "";
 		}
+   }
+   
+   private boolean checkAccessPermission(String remoteUser, String iconName)
+   {
+  	 DockbarService dockbarService = getApplicationComponent(DockbarService.class);
+  	 
+  	 DockbarIcon icon = dockbarService.getIcon(iconName);
+  	 
+  	 if(icon == null)
+  	 {
+  		 return false;
+  	 }
+  	 else
+  	 {
+  		 return dockbarService.hasPermission(remoteUser, icon);
+  	 }
    }
    
 }

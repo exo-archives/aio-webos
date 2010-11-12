@@ -9,22 +9,5 @@
 	  <access-permissions>Everyone</access-permissions>
 	  <edit-permission>manager:/platform/administrators</edit-permission>
     <show-max-window>true</show-max-window>
-	           
-    <application>
-      <instance-id>portal#classic:/exoadmin/AccountPortlet/Account</instance-id>    
-      <title>Register</title>
-      <access-permissions>Everyone</access-permissions>
-    </application>
-    
-    <!--
-    <application>
-      <instance-id>group#platform/guests:/web/IFramePortlet/blog</instance-id>
-      <title>Blog's Link</title>
-      <show-info-bar>true</show-info-bar>
-      <show-application-state>true</show-application-state>
-      <show-application-mode>false</show-application-mode>
-    </application>
-    -->
-                
   </page>  
 </page-set>

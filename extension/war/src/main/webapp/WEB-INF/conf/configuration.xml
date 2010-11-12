@@ -25,4 +25,5 @@
 	<import>war:/conf/webos/portal/portal-configuration.xml</import>
 	<import>war:/conf/webos/jcr/jcr-configuration.xml</import>
 	<import>war:/conf/webos/common/desktop-background-service-configuration.xml</import>
+	<import>war:/conf/webos/common/desktop-dockbar-service-configuration.xml</import>
 </configuration>
