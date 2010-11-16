@@ -19,6 +19,12 @@
 
 package org.exoplatform.webos.webui.page;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
+
+import javax.portlet.WindowState;
+
 import org.exoplatform.portal.application.PortalRequestContext;
 import org.exoplatform.portal.config.DataStorage;
 import org.exoplatform.portal.config.model.ModelObject;
@@ -32,7 +38,6 @@ import org.exoplatform.portal.webui.page.UIPage;
 import org.exoplatform.portal.webui.page.UIPageBody;
 import org.exoplatform.portal.webui.page.UIPageLifecycle;
 import org.exoplatform.portal.webui.page.UIPageActionListener.DeleteGadgetActionListener;
-import org.exoplatform.portal.webui.page.UIPageActionListener.RemoveChildActionListener;
 import org.exoplatform.portal.webui.portal.PageNodeEvent;
 import org.exoplatform.portal.webui.portal.UIPortal;
 import org.exoplatform.portal.webui.portal.UIPortalComponentActionListener.ShowLoginFormActionListener;
@@ -50,12 +55,6 @@ import org.exoplatform.webui.core.UIComponent;
 import org.exoplatform.webui.event.Event;
 import org.exoplatform.webui.event.EventListener;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
-
-import javax.portlet.WindowState;
-
 /**
  * May 19, 2006
  */
@@ -63,7 +62,7 @@ import javax.portlet.WindowState;
 @ComponentConfig(lifecycle = UIPageLifecycle.class, template = "system:/groovy/portal/webui/page/UIDesktopPage.gtmpl", events = {
    @EventConfig(listeners = ShowLoginFormActionListener.class),
    @EventConfig(listeners = DeleteGadgetActionListener.class),
-   @EventConfig(listeners = RemoveChildActionListener.class),
+   @EventConfig(name = "RemoveChild", listeners = UIDesktopPage.RemovePortletActionListener.class),
    @EventConfig(listeners = UIDesktopPage.SaveGadgetPropertiesActionListener.class),
    @EventConfig(listeners = UIDesktopPage.SaveWindowPropertiesActionListener.class),
    @EventConfig(listeners = UIDesktopPage.ShowAddNewApplicationActionListener.class),
@@ -289,6 +288,27 @@ public class UIDesktopPage extends UIPage
   	 else
   	 {
   		 return dockbarService.hasPermission(remoteUser, icon);
+  	 }
+   }
+   
+   static public class RemovePortletActionListener extends EventListener<UIDesktopPage>
+   {
+  	 public void execute(Event<UIDesktopPage> event) throws Exception {
+  		 UIDesktopPage desktopPage = event.getSource();
+       String id = event.getRequestContext().getRequestParameter(UIComponent.OBJECTID);
+       PortalRequestContext pcontext = (PortalRequestContext)event.getRequestContext();
+       desktopPage.removeChildById(id);
+       Page page = (Page) PortalDataMapper.buildModelObject(desktopPage);
+       if (page.getChildren() == null) {
+				page.setChildren(new ArrayList<ModelObject>());
+       }
+       DataStorage dataService = desktopPage
+					.getApplicationComponent(DataStorage.class);
+       dataService.save(page);
+       pcontext.setFullRender(false);
+       pcontext.setResponseComplete(true);
+       pcontext.getWriter().write(EventListener.RESULT_OK);
+       
   	 }
    }
    
