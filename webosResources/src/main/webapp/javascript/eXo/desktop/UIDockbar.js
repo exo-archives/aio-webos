@@ -281,6 +281,11 @@ UIDockbar.prototype.resetDesktopShowedStatus = function(uiPageDesktop, uiDockBar
   }
 } ;
 
+UIDockbar.prototype.initNav = function() {
+	var nav = document.getElementById("DockNavigation") ;
+	this.buildMenu(nav);
+};
+
 UIDockbar.prototype.buildMenu = function(popupMenu) {
 	if(typeof(popupMenu) == "string") popupMenu = document.getElementById(popupMenu) ;
 	
