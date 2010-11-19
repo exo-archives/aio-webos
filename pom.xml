@@ -26,13 +26,13 @@
   </parent>
   <groupId>org.exoplatform.webos</groupId>
   <artifactId>webos-parent</artifactId>
-  <version>1.5.8</version>
+  <version>1.5.9-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>eXo WebOS</name>
   <scm>
-    <connection>scm:svn:http://svn.exoplatform.org/projects/webos/tags/1.5.8</connection>
-    <developerConnection>scm:svn:http://svn.exoplatform.org/projects/webos/tags/1.5.8</developerConnection>
-    <url>http://fisheye.exoplatform.org/browse/projects/webos/tags/1.5.8</url>
+    <connection>scm:svn:http://svn.exoplatform.org/projects/webos/branches/1.5.x</connection>
+    <developerConnection>scm:svn:http://svn.exoplatform.org/projects/webos/branches/1.5.x</developerConnection>
+    <url>http://fisheye.exoplatform.org/browse/projects/webos/branches/1.5.x</url>
   </scm>
   <ciManagement>
     <system>hudson</system>
