@@ -1,0 +1,20 @@
+Index: portal/src/main/webapp/WEB-INF/conf/portal/portal/webos/pages.xml
+===================================================================
+--- portal/src/main/webapp/WEB-INF/conf/portal/portal/webos/pages.xml	(revision 69931)
++++ portal/src/main/webapp/WEB-INF/conf/portal/portal/webos/pages.xml	(working copy)
+@@ -13,6 +13,7 @@
+     <application>
+       <instance-id>portal#webos:/exoadmin/AccountPortlet/Account</instance-id>    
+       <title>Register</title>
++      <show-edited-title>false</show-edited-title>
+     </application>
+     
+     <application>
+@@ -38,6 +39,7 @@
+     <application>
+       <instance-id>portal#webos:/web/BrowserPortlet/WebExplorer</instance-id>    
+       <title>Web Explorer</title>
++      <show-edited-title>false</show-edited-title>
+     </application>
+                 
+     <application>

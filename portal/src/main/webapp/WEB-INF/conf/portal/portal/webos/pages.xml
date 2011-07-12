@@ -13,6 +13,7 @@
     <application>
       <instance-id>portal#webos:/exoadmin/AccountPortlet/Account</instance-id>    
       <title>Register</title>
+      <show-edited-title>false</show-edited-title>
     </application>
     
     <application>
@@ -38,6 +39,7 @@
     <application>
       <instance-id>portal#webos:/web/BrowserPortlet/WebExplorer</instance-id>    
       <title>Web Explorer</title>
+      <show-edited-title>false</show-edited-title>
     </application>
                 
     <application>
